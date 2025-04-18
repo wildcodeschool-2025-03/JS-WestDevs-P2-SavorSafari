@@ -14,11 +14,11 @@ import App from "./App";
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
 
-import Home from "./components/Home/Home";
-import WorldMap from "./components/WorldMap/WorldMap";
 import About from "./components/About/About";
+import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
 import RecipeList from "./components/RecipeList/RecipeList";
+import WorldMap from "./components/WorldMap/WorldMap";
 
 /* ************************************************************************* */
 
