@@ -16,7 +16,7 @@
 :root {
   --light-text-color: rgba(76, 39, 25, 1);
   --light-bg-bloc-color: rgba(248, 245, 202, 0.54);
-  --light-border-bloc-color : rgba(76, 39, 25, 1);
+  --light-border-bloc-color: rgba(76, 39, 25, 1);
 
   --font-family-body: "Open Sans", sans-serif;
 }
