@@ -1,0 +1,13 @@
+footer {
+  color: var(--light-text-color);
+  border-top: 1px solid black;
+  font-size: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.iconFooter img {
+  width: 25px;
+  margin: 8px;
+}
