@@ -14,14 +14,41 @@ import App from "./App";
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
 
+import About from "./components/About/About";
+import Home from "./components/Home/Home";
+import Recipe from "./components/Recipe/Recipe";
+import RecipeList from "./components/RecipeList/RecipeList";
+import WorldMap from "./components/WorldMap/WorldMap";
+
 /* ************************************************************************* */
 
 // Create router configuration with routes
 // You can add more routes as you build out your app!
 const router = createBrowserRouter([
   {
-    path: "/", // The root path
     element: <App />, // Renders the App component for the home page
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/world-map",
+        element: <WorldMap />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/recipe-list",
+        element: <RecipeList />,
+      },
+      {
+        path: "/recipe",
+        element: <Recipe />,
+      },
+    ],
   },
   // Try adding a new route! For example, "/about" with an About component
 ]);
