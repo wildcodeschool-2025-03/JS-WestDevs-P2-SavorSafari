@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/worldmap",
+        path: "/world-map",
         element: <WorldMap />,
       },
       {
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/recipelist",
+        path: "/recipe-list",
         element: <RecipeList />,
       },
       {
