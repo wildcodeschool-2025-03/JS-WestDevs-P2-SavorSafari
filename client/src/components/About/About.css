@@ -1,0 +1,19 @@
+.img {
+  border: 2px, solid, yellow;
+  display: flex;
+  object-fit: contain;
+  height: 100px;
+  width: 100%;
+  padding: 10px;
+}
+
+.avatar.woman {
+  border: 2px, solid, green;
+  object-fit: contain;
+  height: 100px;
+  padding: 10px;
+}
+article.text {
+  border: 2px, solid, black;
+  object-fit: contain;
+}
