@@ -1,3 +1,5 @@
+import type { FeatureProps, ProjectionProps, CountryProps } from "./worldMapType";
+
 export const availableProjections = {
   0: "geoEqualEarth",
   1: "geoAlbers",
@@ -13,13 +15,7 @@ export const availableProjections = {
   11: "geoTransverseMercator",
 };
 
-export const mapFeatures = {
-  scale: 130,
-  projection: availableProjections[10],
-  stroke: "#000"
-};
-
-export const availableCountries = [
+export const availableCountries: CountryProps[] = [
   { key: 0, name: "United States of America", strArea: "American" },
   { key: 1, name: "United Kingdom", strArea: "British" },
   { key: 2, name: "Canada", strArea: "Canadian" },
@@ -50,3 +46,15 @@ export const availableCountries = [
   { key: 27, name: "Uruguay", strArea: "Uruguayan" },
   { key: 28, name: "Vietnam", strArea: "Vietnamese" },
 ];
+
+export const mapFeatures: FeatureProps = {
+  geoUrl: "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+  scale: 130,
+  center: [0, 40],
+  projection: availableProjections[10] as ProjectionProps,
+  stroke: "#000",
+  strokeWidth: 0.2,
+  notAvailableColor: "#EEE",
+  availableColor: "lightblue",
+  availableColorHover: "pink",
+};
