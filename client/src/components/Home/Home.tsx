@@ -1,6 +1,6 @@
 import "./Home.css";
+import { useCallback, useEffect, useState } from "react";
 import CardHome from "./CardHome";
-import { useState, useEffect, useCallback } from "react";
 
 interface Recette {
   strMealThumb: string;
@@ -11,7 +11,6 @@ interface Recette {
 
 function Home() {
   const [recetteData, setRecetteData] = useState<Recette[]>([]);
-
   const getRecette = useCallback(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
       .then((response) => response.json())
@@ -53,7 +52,7 @@ function Home() {
               strMeal={el.strMeal}
               strArea={el.strArea}
               idMeal={el.idMeal}
-              onRefreshClick={getRecette}
+              getRecette={getRecette}
             />
           );
         })}

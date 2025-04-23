@@ -1,15 +1,103 @@
-.TextDePresentation {
+/* figcaption img {
+  width: 275px;
+}
+
+.TexteDePresentation {
   border: 1px solid #cccccc7a;
   padding: 1rem;
   width: 300px;
   margin: 1rem;
-  background-color: #fff;
+  background-color: #fff 56%;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
+.TexteDePresentation p {
+  display: none;
+}
+
 .CardHomeElement {
   display: flex;
   justify-content: flex-end;
+} */
+/* Conteneur principal */
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+figcaption {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+figcaption img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+.TexteDePresentation {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 40%;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  top: 40px;
+  right: 40px;
+}
+
+.TexteDePresentation h2,
+.TexteDePresentation p,
+.TexteDePresentation h3 {
+  margin: 10px 0;
+}
+
+.CardHomeElement {
+  margin-top: 520px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  figcaption img {
+    max-height: 350px;
+  }
+
+  .TexteDePresentation {
+    position: relative;
+    top: -40px;
+    right: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+    max-width: 90%;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .TexteDePresentation p {
+    display: none;
+  }
+
+  .CardHomeElement {
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -1,12 +1,11 @@
 import "./CardHome.css";
 import { Link } from "react-router";
-
 interface Recette {
   strMealThumb: string;
   strArea: string;
   strMeal: string;
   idMeal: string;
-  onRefreshClick: React.MouseEventHandler<HTMLButtonElement>;
+  getRecette: () => void;
 }
 
 function CardHome({
@@ -14,7 +13,7 @@ function CardHome({
   strArea,
   strMeal,
   idMeal,
-  onRefreshClick,
+  getRecette,
 }: Recette) {
   return (
     <figure className="Card_Home">
@@ -26,11 +25,18 @@ function CardHome({
         />
       </Link>
       <div>
-        <p>{strArea} </p> <br /> <h2>{strMeal}</h2>
+        <p>{strArea} </p>
       </div>
-      <button onClick={onRefreshClick} type="button">
-        Another recipe 🍽️
-      </button>
+      <div className="titre-container">
+        <div>
+          <h2>{strMeal}</h2>
+        </div>
+        <div>
+          <button onClick={getRecette} type="button">
+            Another recipe 🍽️
+          </button>
+        </div>
+      </div>
     </figure>
   );
 }
