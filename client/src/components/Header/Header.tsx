@@ -8,20 +8,20 @@ const Header = () => {
       <header>
         <img src="src/assets/img/SavorLogo.png" alt="logo" />
         <div className="nav menu">
-          <a href="Home">Home</a>
-          <a href="Map">Map</a>
-          <a href="About">About</a>
+          <Link to="home">Home</Link>
+          <Link to="map">Map</Link>
+          <Link to="about">About</Link>
         </div>
       </header>
 
       <Menu right={true}>
-        <Link id="Home" className="menu-item" to="/">
+        <Link id="home" className="menu-item" to="/">
           Home
         </Link>
-        <Link id="Map" className="menu-item" to="/">
+        <Link id="map" className="menu-item" to="/">
           Map
         </Link>
-        <Link id="About" className="menu-item" to="/">
+        <Link id="about" className="menu-item" to="/">
           About
         </Link>
       </Menu>
