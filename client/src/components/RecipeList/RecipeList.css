@@ -1,0 +1,17 @@
+.title-recipe {
+  text-align: center;
+  margin: 16px 0;
+  color: var(--light-text-color);
+}
+
+.country-select {
+  text-align: end;
+  margin-right: 32px;
+}
+
+@media screen and (min-width: 600px) {
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
