@@ -1,75 +1,70 @@
-/* figcaption img {
-  width: 275px;
-}
-
-.TexteDePresentation {
-  border: 1px solid #cccccc7a;
-  padding: 1rem;
-  width: 300px;
-  margin: 1rem;
-  background-color: #fff 56%;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.TexteDePresentation p {
-  display: none;
-}
-
-.CardHomeElement {
-  display: flex;
-  justify-content: flex-end;
-} */
-/* Conteneur principal */
 main {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   overflow: hidden;
 }
 
+.full-element {
+  display: flex;
+}
+
 figcaption {
+  display: flex;
+  justify-content: left;
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   z-index: 0;
 }
 
 figcaption img {
-  width: 100%;
-  height: auto;
+  width: 40rem;
+  height: 35rem;
   object-fit: cover;
-  max-height: 500px;
+  display: block;
 }
 
-.TexteDePresentation {
+.texte-de-presentation {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.85);
   padding: 20px;
+  color: #4c2719;
   border-radius: 5px;
   max-width: 40%;
-  text-align: left;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   z-index: 1;
   top: 40px;
   right: 40px;
-}
-
-.TexteDePresentation h2,
-.TexteDePresentation p,
-.TexteDePresentation h3 {
   margin: 10px 0;
 }
 
-.CardHomeElement {
-  margin-top: 520px;
+.texte-de-presentation h2 {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "Pattaya";
+  text-align: center;
+}
+
+.texte-de-presentation p {
+  margin: 8px 0 8px 0;
+  text-align: justify;
+}
+
+.texte-de-presentation h3 {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "Open Sans";
+  text-align: center;
+}
+.card-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  background-color: blueviolet;
   width: 100%;
-  padding: 20px;
+  align-items: flex-end;
+}
+
+.card-home-element {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
   box-sizing: border-box;
   z-index: 2;
 }
@@ -79,7 +74,7 @@ figcaption img {
     max-height: 350px;
   }
 
-  .TexteDePresentation {
+  .texte-de-presentation {
     position: relative;
     top: -40px;
     right: auto;
@@ -91,11 +86,11 @@ figcaption img {
     text-align: center;
   }
 
-  .TexteDePresentation p {
+  .texte-de-presentation p {
     display: none;
   }
 
-  .CardHomeElement {
+  .card-home-element {
     margin-top: 10px;
     flex-direction: column;
     align-items: center;

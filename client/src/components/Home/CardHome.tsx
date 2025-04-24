@@ -16,7 +16,7 @@ function CardHome({
   getRecette,
 }: Recette) {
   return (
-    <figure className="Card_Home">
+    <div className="Card_Home">
       <Link to={`/Recipe/${idMeal}`}>
         <img
           src={strMealThumb}
@@ -29,7 +29,7 @@ function CardHome({
       </div>
       <div className="titre-container">
         <div>
-          <h2>{strMeal}</h2>
+          <p>{strMeal}</p>
         </div>
         <div>
           <button onClick={getRecette} type="button">
@@ -37,7 +37,7 @@ function CardHome({
           </button>
         </div>
       </div>
-    </figure>
+    </div>
   );
 }
 
