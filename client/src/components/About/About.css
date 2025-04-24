@@ -1,5 +1,5 @@
 .about {
-  height: 80vh;
+  height: auto;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -15,7 +15,6 @@
 }
 
 .avatar {
-  border: 2px, solid, blue;
   height: 800px;
 }
 
