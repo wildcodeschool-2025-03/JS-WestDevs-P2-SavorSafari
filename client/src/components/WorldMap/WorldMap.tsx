@@ -5,6 +5,7 @@ import type { ZoomPositionProps } from "./data/worldMapType";
 
 import "./WorldMap.css"
 import { availableCountries, mapFeatures } from "./data/worldMapData";
+import CountryTooltip from "../Tooltip/CountryTooltip";
 
 const WorldMap = () => {
 
@@ -63,30 +64,31 @@ const WorldMap = () => {
               geographies.map((geo) => {
                 const isAvailable = availableCountries.some(country => country.name === geo.properties.name);
                 return (
-                  <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    className={geo.properties.name}
-                    stroke={mapFeatures.stroke}
-                    strokeWidth={mapFeatures.strokeWidth}
-                    style={{
-                      default: {
-                        fill: isAvailable ? mapFeatures.availableColor : mapFeatures.notAvailableColor,
-                      },
-                      hover: {
-                        fill: isAvailable ? mapFeatures.availableColorHover : mapFeatures.notAvailableColor,
-                      },
-                      pressed: {
-                        fill: isAvailable ? "purple" : mapFeatures.notAvailableColor,
-                      },
-                    }}
-                    onClick={() => {
-                      if (isAvailable) {
-                        handleClick(geo.properties.name)
-                      }
-                    }}
-                    title="Country"
-                  />
+                  <CountryTooltip key={geo.rsmKey}>
+                    <Geography
+                      key={geo.rsmKey}
+                      geography={geo}
+                      className={geo.properties.name}
+                      stroke={mapFeatures.stroke}
+                      strokeWidth={mapFeatures.strokeWidth}
+                      style={{
+                        default: {
+                          fill: isAvailable ? mapFeatures.availableColor : mapFeatures.notAvailableColor,
+                        },
+                        hover: {
+                          fill: isAvailable ? mapFeatures.availableColorHover : mapFeatures.notAvailableColor,
+                        },
+                        pressed: {
+                          fill: isAvailable ? "purple" : mapFeatures.notAvailableColor,
+                        },
+                      }}
+                      onClick={() => {
+                        if (isAvailable) {
+                          handleClick(geo.properties.name)
+                        }
+                      }}
+                    />
+                  </CountryTooltip>
 
                 )
               })
