@@ -1,19 +1,47 @@
-.img {
-  border: 2px, solid, yellow;
+.about {
+  height: 80vh;
   display: flex;
-  object-fit: contain;
-  height: 100px;
   width: 100%;
-  padding: 10px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.avatar.woman {
-  border: 2px, solid, green;
+.logo {
+  height: 150px;
+  width: 50%;
   object-fit: contain;
-  height: 100px;
-  padding: 10px;
+  display: flex;
 }
-article.text {
+
+.avatar {
+  border: 2px, solid, blue;
+  height: 800px;
+}
+
+.about article {
   border: 2px, solid, black;
+  padding: 16px;
+  height: 600px;
+  width: 90%;
   object-fit: contain;
+  box-shadow: 10px 5px 5px gray;
+  border-radius: 25px;
+}
+
+.about article img {
+  height: 70px;
+  width: 20%;
+  object-fit: contain;
+}
+.about h1,
+.about h2 {
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .about {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
