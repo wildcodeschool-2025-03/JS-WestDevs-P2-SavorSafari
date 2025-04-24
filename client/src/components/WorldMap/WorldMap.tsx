@@ -85,6 +85,7 @@ const WorldMap = () => {
                         handleClick(geo.properties.name)
                       }
                     }}
+                    title="Country"
                   />
 
                 )
