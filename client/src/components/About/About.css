@@ -1,5 +1,5 @@
 .about {
-  height: auto;
+  height: auto; /* ou min-height, je veux une hauteur minimale */
   display: flex;
   width: 100%;
   flex-direction: column;
