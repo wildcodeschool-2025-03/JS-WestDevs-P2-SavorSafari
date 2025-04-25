@@ -16,7 +16,7 @@ function CardHome({
   getRecette,
 }: Recette) {
   return (
-    <div className="Card_Home">
+    <div className="card-home">
       <Link to={`/Recipe/${idMeal}`}>
         <img
           src={strMealThumb}
