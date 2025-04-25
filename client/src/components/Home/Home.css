@@ -1,17 +1,14 @@
-main {
-  position: relative;
-  overflow: hidden;
-}
-
 .full-element {
   display: flex;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
 figcaption {
+  grid-area: 2 / 1 / 5 / 3;
   display: flex;
   justify-content: left;
-  position: relative;
-  /* width: 100%; */
   z-index: 0;
 }
 
@@ -23,17 +20,16 @@ figcaption img {
 }
 
 .texte-de-presentation {
+  width: 50%;
+  font-size: 13px;
   position: absolute;
+  grid-area: 2 / 2 / 3 / 5;
   background-color: rgba(255, 255, 255, 0.85);
-  padding: 20px;
+  padding: 10px;
   color: #4c2719;
   border-radius: 5px;
-  max-width: 40%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px #4c2719;
   z-index: 1;
-  top: 40px;
-  right: 40px;
-  margin: 10px 0;
 }
 
 .texte-de-presentation h2 {
@@ -43,56 +39,67 @@ figcaption img {
 }
 
 .texte-de-presentation p {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "Open Sans";
   margin: 8px 0 8px 0;
   text-align: justify;
 }
 
 .texte-de-presentation h3 {
   /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
-  font-family: "Open Sans";
+  font-family: "Pattaya";
   text-align: center;
 }
 .card-container {
-  display: flex;
-  background-color: blueviolet;
-  width: 100%;
-  align-items: flex-end;
+  margin: auto auto;
 }
 
 .card-home-element {
-  display: flex;
-  justify-content: right;
+  grid-area: 3 / 4 / 5 / 5;
   flex-wrap: wrap;
   width: 100%;
-  position: relative;
   box-sizing: border-box;
   z-index: 2;
 }
 
 @media screen and (max-width: 768px) {
+  .full-element {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   figcaption img {
-    max-height: 350px;
+    width: 100%;
   }
 
   .texte-de-presentation {
-    position: relative;
-    top: -40px;
-    right: auto;
-    left: auto;
-    transform: none;
-    margin: 0 auto;
-    max-width: 90%;
-    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
     text-align: center;
+    left: 15%;
+    width: 70%;
   }
 
   .texte-de-presentation p {
     display: none;
   }
 
+  .card-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+  }
+
   .card-home-element {
-    margin-top: 10px;
-    flex-direction: column;
-    align-items: center;
+    margin: 2rem auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .texte-de-presentation {
+    margin: 1rem 4rem 2rem 30rem;
   }
 }

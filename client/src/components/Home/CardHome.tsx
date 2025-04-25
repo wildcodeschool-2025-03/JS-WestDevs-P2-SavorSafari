@@ -29,7 +29,7 @@ function CardHome({
       </div>
       <div className="titre-container">
         <div>
-          <p>{strMeal}</p>
+          <h2>{strMeal}</h2>
         </div>
         <div>
           <button onClick={getRecette} type="button">
