@@ -53,36 +53,34 @@
 
 @media screen and (max-width: 768px) {
   .full-element {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 0.25fr repeat(3, 1fr) 0.5fr repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
   }
 
   .chef-cuisto {
-    width: 100%;
+    grid-area: 1 / 1 / 6 / 6;
   }
 
   .texte-de-presentation {
+    grid-area: 5 / 2 / 7 / 5;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 12px;
+    font-size: 9px;
     text-align: center;
-    left: 15%;
-    width: 70%;
   }
 
   .texte-de-presentation p {
     display: none;
   }
 
-  .card-container {
-    display: flex;
-    justify-content: center;
-    margin: 2rem auto;
-  }
-
-  .card-home-element {
-    margin: 2rem auto;
+  .card-container-home {
+    grid-area: 8 / 2 / 11 / 5;
+    /* display: flex;
+    justify-content: center; */
+    /* margin: 2rem auto; */
   }
 }
