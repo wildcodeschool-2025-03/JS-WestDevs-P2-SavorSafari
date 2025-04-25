@@ -9,6 +9,14 @@
   margin-right: 32px;
 }
 
+.country-select,
+select,
+select::picker(select) {
+  appearance: base-select;
+  color: var(--light-text-color);
+  padding: 4px 8px;
+}
+
 @media screen and (min-width: 600px) {
   .card-list {
     display: grid;

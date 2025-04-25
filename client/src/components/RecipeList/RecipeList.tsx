@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./RecipeListCard";
 import "./RecipeList.css";
 import RecipeListCard from "./RecipeListCard";
-// import CountryFlag from "./CountryFlag";
 
 interface RecipeData {
   idMeal: string;
@@ -59,17 +58,14 @@ function RecipeList() {
     <main>
       <div className="country-select">
         <select value={country} onChange={handleCountryChange}>
-          {countries.map((c) => (
-            <option key={c} value={c}>
-              {c}
+          {countries.map((el) => (
+            <option key={el} value={el}>
+              {el}
             </option>
           ))}
         </select>
       </div>
-      <h2 className="title-recipe">
-        {/* <CountryFlag countryName={country} /> */}
-        {country}
-      </h2>
+      <h2 className="title-recipe">{country}</h2>
       <article className="card-list">
         {recipe.map((meal) => (
           <RecipeListCard
