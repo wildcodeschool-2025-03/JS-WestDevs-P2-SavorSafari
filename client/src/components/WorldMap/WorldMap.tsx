@@ -3,9 +3,8 @@ import { useNavigate } from "react-router";
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
 import type { ZoomPositionProps } from "./data/worldMapType";
 
-import "./WorldMap.css"
 import { availableCountries, mapFeatures } from "./data/worldMapData";
-import CountryTooltip from "../Tooltip/CountryTooltip";
+import "./WorldMap.css";
 
 const WorldMap = () => {
 
@@ -38,7 +37,7 @@ const WorldMap = () => {
   const handleClick = (geoName: string) => {
     const area = getAreaFromGeo(geoName);
     console.log(area);
-    navigate(`/recipe-list/${area}`);
+    area && navigate(`/recipe-list/${area}`);
   }
 
   return (
@@ -64,31 +63,31 @@ const WorldMap = () => {
               geographies.map((geo) => {
                 const isAvailable = availableCountries.some(country => country.name === geo.properties.name);
                 return (
-                  <CountryTooltip key={geo.rsmKey}>
-                    <Geography
-                      key={geo.rsmKey}
-                      geography={geo}
-                      className={geo.properties.name}
-                      stroke={mapFeatures.stroke}
-                      strokeWidth={mapFeatures.strokeWidth}
-                      style={{
-                        default: {
-                          fill: isAvailable ? mapFeatures.availableColor : mapFeatures.notAvailableColor,
-                        },
-                        hover: {
-                          fill: isAvailable ? mapFeatures.availableColorHover : mapFeatures.notAvailableColor,
-                        },
-                        pressed: {
-                          fill: isAvailable ? "purple" : mapFeatures.notAvailableColor,
-                        },
-                      }}
-                      onClick={() => {
-                        if (isAvailable) {
-                          handleClick(geo.properties.name)
-                        }
-                      }}
-                    />
-                  </CountryTooltip>
+
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    className={geo.properties.name}
+                    stroke={mapFeatures.stroke}
+                    strokeWidth={mapFeatures.strokeWidth}
+                    style={{
+                      default: {
+                        fill: isAvailable ? mapFeatures.availableColor : mapFeatures.notAvailableColor,
+                      },
+                      hover: {
+                        fill: isAvailable ? mapFeatures.availableColorHover : mapFeatures.notAvailableColor,
+                      },
+                      pressed: {
+                        fill: isAvailable ? "purple" : mapFeatures.notAvailableColor,
+                      },
+                    }}
+                    onClick={() => {
+                      if (isAvailable) {
+                        handleClick(geo.properties.name)
+                      }
+                    }}
+                  />
+
 
                 )
               })

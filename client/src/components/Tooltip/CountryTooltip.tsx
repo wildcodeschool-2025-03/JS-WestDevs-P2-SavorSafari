@@ -7,13 +7,11 @@ import {
   useHover,
   useInteractions
 } from '@floating-ui/react';
-import { Children, createContext, useState } from 'react';
+import { useState } from 'react';
 
 import "./CountryTooltip.css";
 
-const CountryTooltipContext = createContext(null);
-
-const CountryTooltip = (Children) => {
+const CountryTooltip = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { refs, floatingStyles, context } = useFloating({
@@ -53,7 +51,7 @@ const CountryTooltip = (Children) => {
       <CountryTooltipContent>My tooltip</CountryTooltipContent>
       </div> */}
       <button ref={refs.setReference} {...getReferenceProps()}>
-        {Children}
+        coucou
       </button>
       {isOpen && (
         <div
@@ -61,7 +59,7 @@ const CountryTooltip = (Children) => {
           style={floatingStyles}
           {...getFloatingProps()}
         >
-          Tooltip element
+          Tooltip - Display country name
         </div>
       )}
     </>
