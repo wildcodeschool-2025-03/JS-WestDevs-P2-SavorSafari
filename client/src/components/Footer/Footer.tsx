@@ -3,7 +3,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="class-footer">
-      <p>Copyright @ 2025 SavorSafari by WestDev</p>
+      <p>© 2025 SavorSafari by WestDevs</p>
       <nav className="icon-footer">
         <a href="https://www.wildcodeschool.com/">
           <img
