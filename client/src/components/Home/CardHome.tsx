@@ -1,11 +1,11 @@
 import "./CardHome.css";
 import { Link } from "react-router";
-interface Recette {
+interface Recipe {
   strMealThumb: string;
   strArea: string;
   strMeal: string;
   idMeal: string;
-  getRecette: () => void;
+  getRecipe: () => void;
 }
 
 function CardHome({
@@ -13,31 +13,26 @@ function CardHome({
   strArea,
   strMeal,
   idMeal,
-  getRecette,
-}: Recette) {
+  getRecipe,
+}: Recipe) {
   return (
-    <div className="card-home">
+    <article className="card-home">
       <Link to={`/Recipe/${idMeal}`}>
-        <img
-          src={strMealThumb}
-          alt={`${strArea} ${strMeal} ${idMeal}`}
-          style={{ cursor: "pointer" }}
-        />
+        <img src={strMealThumb} alt={`${strArea} ${strMeal} ${idMeal}`} />
       </Link>
       <div>
         <p>{strArea} </p>
       </div>
-      <div className="titre-container">
+      <div className="title-container">
         <div>
           <h2>{strMeal}</h2>
         </div>
-        <div>
-          <button onClick={getRecette} type="button">
-            Another recipe 🍽️
-          </button>
-        </div>
+
+        <button onClick={getRecipe} type="button">
+          Another recipe 🍽️
+        </button>
       </div>
-    </div>
+    </article>
   );
 }
 
