@@ -9,7 +9,7 @@ interface RecipeData {
   strMeal: string;
 }
 
-function RecipeList() {
+const RecipeList = () => {
   const [recipe, setRecipe] = useState<RecipeData[]>([]);
   const [country, setCountry] = useState("American");
   const countries = [
@@ -77,5 +77,5 @@ function RecipeList() {
       </article>
     </main>
   );
-}
+};
 export default RecipeList;
