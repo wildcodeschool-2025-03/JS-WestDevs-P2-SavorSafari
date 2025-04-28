@@ -1,69 +1,79 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
+import {
+  ComposableMap,
+  Geographies,
+  Geography,
+  ZoomableGroup,
+} from "react-simple-maps";
 import type { ZoomPositionProps } from "./data/worldMapType";
 
 import { availableCountries, mapFeatures } from "./data/worldMapData";
 import "./WorldMap.css";
 
 const WorldMap = () => {
+  // Zoom
 
-  // Zoom 
-
-  const [position, setPosition] = useState<ZoomPositionProps["position"]>({ coordinates: [0, 0], zoom: 1 });
+  const [position, setPosition] = useState<ZoomPositionProps["position"]>({
+    coordinates: [0, 0],
+    zoom: 1,
+  });
 
   const handleZoomIn = () => {
     if (position.zoom >= 8) return;
     setPosition((pos) => ({ ...pos, zoom: pos.zoom * 2 }));
-  }
+  };
 
   const handleZoomOut = () => {
     if (position.zoom <= 1) return;
     setPosition((pos) => ({ ...pos, zoom: pos.zoom / 2 }));
-  }
+  };
 
   const handleMoveEnd = (position: ZoomPositionProps["position"]) => {
     setPosition(position);
-  }
+  };
 
   // Nav on click
 
   const navigate = useNavigate();
 
   const getAreaFromGeo = (geoName: string) => {
-    return availableCountries.find(country => country.name === geoName)?.strArea
-  }
+    return availableCountries.find((country) => country.name === geoName)
+      ?.strArea;
+  };
 
   const handleClick = (geoName: string) => {
     const area = getAreaFromGeo(geoName);
     console.log(area);
     area && navigate(`/recipe-list/${area}`);
-  }
+  };
 
   return (
     <section className="world-map-section">
-      <p>Click, Cook, Travel : Discover the Flavors of the World with a click!</p>
+      <p>
+        Click, Cook, Travel : Discover the Flavors of the World with a click!
+      </p>
 
       <ComposableMap
         projection={mapFeatures.projection}
         projectionConfig={{
           scale: mapFeatures.scale,
-          center: mapFeatures.center
+          center: mapFeatures.center,
         }}
-        className="map-container">
-
+        className="map-container"
+      >
         <ZoomableGroup
           zoom={position.zoom}
           center={position.coordinates}
           onMoveEnd={handleMoveEnd}
         >
-
           <Geographies geography={mapFeatures.geoUrl}>
             {({ geographies }) =>
               geographies.map((geo) => {
-                const isAvailable = availableCountries.some(country => country.name === geo.properties.name);
+                const isAvailable = availableCountries.some(
+                  (country) => country.name === geo.properties.name,
+                );
                 return (
-
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
@@ -72,24 +82,28 @@ const WorldMap = () => {
                     strokeWidth={mapFeatures.strokeWidth}
                     style={{
                       default: {
-                        fill: isAvailable ? mapFeatures.availableColor : mapFeatures.notAvailableColor,
+                        fill: isAvailable
+                          ? mapFeatures.availableColor
+                          : mapFeatures.notAvailableColor,
                       },
                       hover: {
-                        fill: isAvailable ? mapFeatures.availableColorHover : mapFeatures.notAvailableColor,
+                        fill: isAvailable
+                          ? mapFeatures.availableColorHover
+                          : mapFeatures.notAvailableColor,
                       },
                       pressed: {
-                        fill: isAvailable ? "purple" : mapFeatures.notAvailableColor,
+                        fill: isAvailable
+                          ? "purple"
+                          : mapFeatures.notAvailableColor,
                       },
                     }}
                     onClick={() => {
                       if (isAvailable) {
-                        handleClick(geo.properties.name)
+                        handleClick(geo.properties.name);
                       }
                     }}
                   />
-
-
-                )
+                );
               })
             }
           </Geographies>

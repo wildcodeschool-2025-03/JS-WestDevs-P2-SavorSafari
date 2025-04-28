@@ -1,4 +1,8 @@
-import type { FeatureProps, ProjectionProps, CountryProps } from "./worldMapType";
+import type {
+  CountryProps,
+  FeatureProps,
+  ProjectionProps,
+} from "./worldMapType";
 
 export const availableProjections = {
   0: "geoEqualEarth",

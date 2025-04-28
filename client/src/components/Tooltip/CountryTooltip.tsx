@@ -5,9 +5,9 @@ import {
   shift,
   useFloating,
   useHover,
-  useInteractions
-} from '@floating-ui/react';
-import { useState } from 'react';
+  useInteractions,
+} from "@floating-ui/react";
+import { useState } from "react";
 
 import "./CountryTooltip.css";
 
@@ -63,7 +63,7 @@ const CountryTooltip = () => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
 export default CountryTooltip;

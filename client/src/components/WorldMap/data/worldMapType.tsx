@@ -1,16 +1,16 @@
 export type ProjectionProps =
-  "geoEqualEarth" |
-  "geoAlbers" |
-  "geoAlbersUsa" |
-  "geoAzimuthalEqualArea" |
-  "geoAzimuthalEquidistant" |
-  "geoOrthographic" |
-  "geoConicConformal" |
-  "geoConicEqualArea" |
-  "geoConicEquidistant" |
-  "geoStereographic" |
-  "geoMercator" |
-  "geoTransverseMercator";
+  | "geoEqualEarth"
+  | "geoAlbers"
+  | "geoAlbersUsa"
+  | "geoAzimuthalEqualArea"
+  | "geoAzimuthalEquidistant"
+  | "geoOrthographic"
+  | "geoConicConformal"
+  | "geoConicEqualArea"
+  | "geoConicEquidistant"
+  | "geoStereographic"
+  | "geoMercator"
+  | "geoTransverseMercator";
 
 export interface FeatureProps {
   geoUrl: string;
@@ -19,7 +19,7 @@ export interface FeatureProps {
   projection: ProjectionProps;
   stroke: string;
   strokeWidth: number;
-  notAvailableColor: string,
+  notAvailableColor: string;
   availableColor: string;
   availableColorHover: string;
 }
@@ -36,6 +36,7 @@ export interface CountryProps {
 
 export interface ZoomPositionProps {
   position: {
-    coordinates: [number, number], zoom: number
-  }
+    coordinates: [number, number];
+    zoom: number;
+  };
 }
