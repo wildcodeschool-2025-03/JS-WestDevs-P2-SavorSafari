@@ -67,12 +67,18 @@
 
   .logo {
     grid-area: 1 / 2 / 2 / 3;
+    border: 2px, solid, red;
+    place-self: center;
+    height: 350px;
+    width: 100%;
   }
 
   .about article {
     grid-area: 2 / 2 / 3 / 3;
-    height: 400px;
+    border: 2px, solid, greenyellow;
+    height: 300px;
     width: 40%;
-    object-fit: contain;
+    margin: 40px;
+    justify-self: flex-end;
   }
 }
