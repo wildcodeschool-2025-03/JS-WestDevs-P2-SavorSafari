@@ -19,7 +19,7 @@
   }
 }
 
-.presentation-text {
+.home-elements hgroup {
   font-size: 13px;
   grid-area: 2 / 3 / 3 / 6;
   background-color: rgba(255, 255, 255, 0.85);
@@ -30,17 +30,17 @@
   z-index: 1;
 }
 
-.presentation-text h2 {
+.home-elements hgroup h2 {
   text-align: center;
   font-family: var(--font-family-title);
 }
 
-.presentation-text p {
+.home-elements hgroup p {
   margin: 8px 0 8px 0;
   text-align: justify;
 }
 
-.presentation-text h3 {
+.home-elements hgroup h3 {
   text-align: center;
   font-family: var(--font-family-title);
 }
@@ -67,12 +67,12 @@
     grid-area: 1 / 1 / 6 / 6;
   }
 
-  .presentation-text {
+  .home-elements hgroup {
     grid-area: 5 / 2 / 7 / 5;
     font-size: 45%;
   }
 
-  .presentation-text p {
+  .home-elements hgroup p {
     display: none;
   }
 

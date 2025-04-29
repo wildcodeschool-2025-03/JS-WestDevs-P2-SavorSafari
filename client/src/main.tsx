@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/recipe-list",
+        path: "/recipe-list/:country",
         element: <RecipeList />,
       },
       {

@@ -24,10 +24,7 @@ function CardHome({
         <p>{strArea} </p>
       </div>
       <div className="title-container">
-        <div>
-          <h2>{strMeal}</h2>
-        </div>
-
+        <h2>{strMeal}</h2>
         <button onClick={getRecipe} type="button">
           Another recipe 🍽️
         </button>

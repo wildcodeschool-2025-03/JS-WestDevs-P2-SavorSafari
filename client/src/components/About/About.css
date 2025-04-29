@@ -1,0 +1,46 @@
+.about {
+  height: auto; /* ou min-height, je veux une hauteur minimale */
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  height: 150px;
+  width: 50%;
+  object-fit: contain;
+  display: flex;
+}
+
+.avatar {
+  height: 800px;
+}
+
+.about article {
+  border: 2px, solid, black;
+  padding: 16px;
+  height: 600px;
+  width: 90%;
+  object-fit: contain;
+  box-shadow: 10px 5px 5px gray;
+  border-radius: 25px;
+}
+
+.about article img {
+  height: 70px;
+  width: 20%;
+  object-fit: contain;
+}
+.about h1,
+.about h2 {
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .about {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

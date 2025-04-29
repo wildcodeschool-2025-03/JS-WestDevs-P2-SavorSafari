@@ -30,7 +30,7 @@ function Home() {
       <div className="chef">
         <img src="/img/image1_projet2.jpg" alt="chef" />
       </div>
-      <hgroup className="presentation-text">
+      <hgroup>
         <h2>
           Welcome to SavorSafari, your ultimate culinary destination to explore
           the flavors of the world!

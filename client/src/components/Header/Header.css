@@ -1,0 +1,80 @@
+header {
+  height: 15vh;
+  display: flex;
+  width: 100%;
+  background: linear-gradient(90deg, white, var(--light-bg-bloc-color));
+}
+
+header img {
+  object-fit: contain;
+  height: 100px;
+  padding: 10px;
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+}
+
+.bm-burger-bars {
+  background: var(--light-border-bloc-color);
+}
+
+.bm-menu {
+  background: var(--light-border-bloc-color);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.menu-item {
+  display: block;
+  color: var(--light-bg-bloc-color);
+  padding: 0.5em 0;
+  text-decoration: none;
+}
+
+/* Couleur/forme de la croix du bouton de fermeture */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*En dessous de 600px, en mobile*/
+@media screen and (max-width: 600px) {
+  div.nav.menu {
+    display: none;
+  }
+}
+
+/* Au dessus de 600px, en desktop */
+@media screen and (min-width: 600px) {
+  header {
+    flex-direction: row;
+  }
+
+  .bm-burger-button {
+    display: none;
+  }
+
+  header img {
+    height: 120px;
+    padding: 5px;
+  }
+
+  header a {
+    color: var(--light-text-color);
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  div.nav.menu {
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    flex-basis: 100%;
+  }
+}
