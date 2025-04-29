@@ -24,7 +24,7 @@ const CountryTooltip = () => {
   const hover = useHover(context, { move: true });
 
   // Merge all the interactions into prop getters
-  const { getReferenceProps, getFloatingProps } = useInteractions([hover,]);
+  const { getReferenceProps, getFloatingProps } = useInteractions([hover]);
 
   return (
     <>
