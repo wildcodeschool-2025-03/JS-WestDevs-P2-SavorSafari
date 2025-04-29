@@ -44,7 +44,6 @@ const WorldMap = () => {
 
   const handleClick = (geoName: string) => {
     const area = getAreaFromGeo(geoName);
-    console.log(area);
     area && navigate(`/recipe-list/${area}`);
   };
 
