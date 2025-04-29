@@ -23,12 +23,16 @@ function CardHome({
       <div>
         <p>{strArea} </p>
       </div>
-      <div className="title-container">
-        <h2>{strMeal}</h2>
-        <button onClick={getRecipe} type="button">
-          Another recipe 🍽️
-        </button>
-      </div>
+      <section className="title-container">
+        <article>
+          <h2>{strMeal}</h2>
+        </article>
+        <div>
+          <button onClick={getRecipe} type="button">
+            Another recipe 🍽️
+          </button>
+        </div>
+      </section>
     </article>
   );
 }

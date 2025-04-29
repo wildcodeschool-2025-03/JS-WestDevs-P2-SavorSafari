@@ -27,9 +27,9 @@ function Home() {
 
   return (
     <main className="home-elements">
-      <div className="chef">
+      <figure className="chef">
         <img src="/img/image1_projet2.jpg" alt="chef" />
-      </div>
+      </figure>
       <hgroup>
         <h2>
           Welcome to SavorSafari, your ultimate culinary destination to explore
