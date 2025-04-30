@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import {
   ComposableMap,
@@ -50,7 +50,7 @@ const WorldMap = () => {
   const handleClick = (geoName: string) => {
     setArea(getAreaFromGeo(geoName));
     setCountryName(geoName);
-    area && dialogRef.current && dialogRef.current.showModal()
+    area && dialogRef.current && dialogRef.current.showModal();
   };
 
   return (
@@ -63,15 +63,17 @@ const WorldMap = () => {
         <button
           type="button"
           onClick={() => {
-            if (dialogRef.current) dialogRef.current.close()
+            if (dialogRef.current) dialogRef.current.close();
           }}
         >
           Choose another
         </button>
-        <button type="button"
+        <button
+          type="button"
           onClick={() => {
             area && navigate(`/recipe-list/${area}`);
-          }}>
+          }}
+        >
           Travel now !
         </button>
       </dialog>
