@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router";
 import {
   ComposableMap,
@@ -33,7 +33,7 @@ const WorldMap = () => {
     setPosition(position);
   };
 
-  // Nav on click
+  // Nav on click + Popover
 
   const navigate = useNavigate();
 
@@ -42,16 +42,15 @@ const WorldMap = () => {
       ?.strArea;
   };
 
-  const dialog = document.querySelector("dialog");
-  const popoverText = document.querySelector(".popover-text");
-  let area: string | undefined;
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const popTextRef = useRef<HTMLParagraphElement>(null);
+  const [area, setArea] = useState<string | undefined>("");
+  const [countryName, setCountryName] = useState("");
 
   const handleClick = (geoName: string) => {
-    area = getAreaFromGeo(geoName);
-    if (popoverText) {
-      popoverText.innerHTML = `Chosen country : ${geoName}`;
-    }
-    area && dialog && dialog.showModal()
+    setArea(getAreaFromGeo(geoName));
+    setCountryName(geoName);
+    area && dialogRef.current && dialogRef.current.showModal()
   };
 
   return (
@@ -59,11 +58,11 @@ const WorldMap = () => {
       <p>
         Click, Cook, Travel : Discover the Flavors of the World with a click!
       </p>
-      <dialog>
+      <dialog ref={dialogRef}>
         <button
           type="button"
           onClick={() => {
-            if (dialog) dialog.close()
+            if (dialogRef.current) dialogRef.current.close()
           }}
         >
           Close
@@ -73,9 +72,8 @@ const WorldMap = () => {
             area && navigate(`/recipe-list/${area}`);
           }}>
           Travel !
-
         </button>
-        <p className="popover-text">Test modal</p>
+        <p ref={popTextRef}>Chosen country :  {countryName}</p>
       </dialog>
       <ComposableMap
         projection={mapFeatures.projection}
