@@ -13,12 +13,19 @@
   src: url(./assets/fonts/OpenSans-VariableFont_wdth\,wght.ttf) format(truetype);
 }
 
+@font-face {
+  font-family: "Pattaya";
+  font-weight: 400;
+  font-style: normal;
+  src: url(./assets/fonts/Pattaya-Regular.ttf) format(truetype);
+}
+
 :root {
   --light-text-color: rgba(76, 39, 25, 1);
   --light-bg-bloc-color: rgba(248, 245, 202, 0.54);
   --light-border-bloc-color: rgba(76, 39, 25, 1);
-
   --font-family-body: "Open Sans", sans-serif;
+  --font-family-title: "Pattaya", sans-serif;
 }
 
 body {
