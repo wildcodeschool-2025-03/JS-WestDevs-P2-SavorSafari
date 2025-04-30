@@ -7,10 +7,12 @@ const Header = () => {
     <>
       <header>
         <img src="src/assets/img/SavorLogo.png" alt="logo" />
+
         <div className="nav menu">
-          <Link to="home">Home</Link>
-          <Link to="map">Map</Link>
-          <Link to="about">About</Link>
+          <Link to="/"> Home </Link>
+          <Link to="/world-map"> Map </Link>
+          <Link to="/about"> About </Link>
+          <Link to="/register"> Register </Link>
         </div>
       </header>
 
@@ -18,12 +20,13 @@ const Header = () => {
         <Link id="home" className="menu-item" to="/">
           Home
         </Link>
-        <Link id="map" className="menu-item" to="/">
+        <Link id="map" className="menu-item" to="/world-map">
           Map
         </Link>
-        <Link id="about" className="menu-item" to="/">
+        <Link id="about" className="menu-item" to="/about">
           About
         </Link>
+        <Link id="register" className="menu-item" to="/register"></Link>
       </Menu>
     </>
   );

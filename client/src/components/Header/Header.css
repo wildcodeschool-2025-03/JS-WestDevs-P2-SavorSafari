@@ -1,5 +1,5 @@
 header {
-  height: 15vh;
+  height: 10vh;
   display: flex;
   width: 100%;
   background: linear-gradient(90deg, white, var(--light-bg-bloc-color));
