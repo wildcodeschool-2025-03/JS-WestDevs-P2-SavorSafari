@@ -18,6 +18,7 @@ import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
 import RecipeList from "./components/RecipeList/RecipeList";
+import Register from "./components/Register/Register";
 import WorldMap from "./components/WorldMap/WorldMap";
 
 /* ************************************************************************* */
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/recipe",
         element: <Recipe />,
+      },
+      {
+        path: "/Register",
+        element: <Register />,
       },
     ],
   },

@@ -1,0 +1,9 @@
+.register-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.register-page img {
+  height: 150px;
+}
