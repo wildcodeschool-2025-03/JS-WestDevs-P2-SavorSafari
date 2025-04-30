@@ -55,25 +55,25 @@ const WorldMap = () => {
 
   return (
     <section className="world-map-section">
-      <p>
-        Click, Cook, Travel : Discover the Flavors of the World with a click!
-      </p>
+      <h3>
+        Click, Cook, Travel : Discover the flavors of the world with a click!
+      </h3>
       <dialog ref={dialogRef}>
+        <p ref={popTextRef}>{countryName}</p>
         <button
           type="button"
           onClick={() => {
             if (dialogRef.current) dialogRef.current.close()
           }}
         >
-          Close
+          Choose another
         </button>
         <button type="button"
           onClick={() => {
             area && navigate(`/recipe-list/${area}`);
           }}>
-          Travel !
+          Travel now !
         </button>
-        <p ref={popTextRef}>Chosen country :  {countryName}</p>
       </dialog>
       <ComposableMap
         projection={mapFeatures.projection}
@@ -81,7 +81,7 @@ const WorldMap = () => {
           scale: mapFeatures.scale,
           center: mapFeatures.center,
         }}
-        className="map-container"
+        className="composable-map"
       >
         <ZoomableGroup
           zoom={position.zoom}
