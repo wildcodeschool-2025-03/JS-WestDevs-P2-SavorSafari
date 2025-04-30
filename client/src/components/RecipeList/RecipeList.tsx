@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./RecipeListCard";
 import "./RecipeList.css";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import RecipeListCard from "./RecipeListCard";
 
 interface RecipeData {
@@ -45,12 +45,17 @@ const RecipeList = () => {
     "Vietnamese",
   ];
   const navigate = useNavigate();
+  const { country: idCountry } = useParams<{ country: string }>();
 
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`)
+    const fetchCountry = idCountry || country;
+    setCountry(fetchCountry);
+    fetch(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?a=${fetchCountry}`,
+    )
       .then((response) => response.json())
       .then((data) => setRecipe(data.meals));
-  }, [country]);
+  }, [idCountry, country]);
 
   const handleCountryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCountry = event.target.value;
