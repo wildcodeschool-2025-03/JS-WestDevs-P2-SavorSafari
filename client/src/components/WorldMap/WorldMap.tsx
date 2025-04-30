@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import {
   ComposableMap,
@@ -33,7 +33,7 @@ const WorldMap = () => {
     setPosition(position);
   };
 
-  // Nav on click
+  // Nav on click + Popover
 
   const navigate = useNavigate();
 
@@ -42,24 +42,48 @@ const WorldMap = () => {
       ?.strArea;
   };
 
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const popTextRef = useRef<HTMLParagraphElement>(null);
+  const [area, setArea] = useState<string | undefined>("");
+  const [countryName, setCountryName] = useState("");
+
   const handleClick = (geoName: string) => {
-    const area = getAreaFromGeo(geoName);
-    area && navigate(`/recipe-list/${area}`);
+    setArea(getAreaFromGeo(geoName));
+    setCountryName(geoName);
+    area && dialogRef.current && dialogRef.current.showModal();
   };
 
   return (
     <section className="world-map-section">
-      <p>
-        Click, Cook, Travel : Discover the Flavors of the World with a click!
-      </p>
-
+      <h3>
+        Click, Cook, Travel : Discover the flavors of the world with a click!
+      </h3>
+      <dialog ref={dialogRef}>
+        <p ref={popTextRef}>{countryName}</p>
+        <button
+          type="button"
+          onClick={() => {
+            if (dialogRef.current) dialogRef.current.close();
+          }}
+        >
+          Choose another
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            area && navigate(`/recipe-list/${area}`);
+          }}
+        >
+          Travel now !
+        </button>
+      </dialog>
       <ComposableMap
         projection={mapFeatures.projection}
         projectionConfig={{
           scale: mapFeatures.scale,
           center: mapFeatures.center,
         }}
-        className="map-container"
+        className="composable-map"
       >
         <ZoomableGroup
           zoom={position.zoom}
