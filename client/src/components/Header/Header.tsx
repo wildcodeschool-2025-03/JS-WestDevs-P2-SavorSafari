@@ -17,16 +17,13 @@ const Header = () => {
       </header>
 
       <Menu right={true}>
-        <Link id="home" className="menu-item" to="/">
-          Home
-        </Link>
-        <Link id="map" className="menu-item" to="/world-map">
-          Map
-        </Link>
-        <Link id="about" className="menu-item" to="/about">
-          About
-        </Link>
-        <Link id="register" className="menu-item" to="/register"></Link>
+        <Link id="home" className="menu-item" to="/" />
+        Home
+        <Link id="map" className="menu-item" to="/world-map" />
+        Map
+        <Link id="about" className="menu-item" to="/about" />
+        About
+        <Link id="register" className="menu-item" to="/register" />
       </Menu>
     </>
   );
