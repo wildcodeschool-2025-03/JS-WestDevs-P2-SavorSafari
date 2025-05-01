@@ -6,7 +6,7 @@ const About = () => {
       <img className="logo" src="src/assets/img/SavorLogo.png" alt="logo" />
       <img
         className="avatar"
-        src="src/assets/img/avatar_projet_2 (1) - rogner.png"
+        src="/public/img/avatar projet 2.png"
         alt="avatar"
       />
       <article>
