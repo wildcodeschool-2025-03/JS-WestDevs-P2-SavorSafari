@@ -4,11 +4,7 @@ const About = () => {
   return (
     <main className="about">
       <img className="logo" src="src/assets/img/SavorLogo.png" alt="logo" />
-      <img
-        className="avatar"
-        src="/public/img/avatar projet 2.png"
-        alt="avatar"
-      />
+      <img className="avatar" src="/img/avatar projet 2.png" alt="avatar" />
       <article>
         <h1>
           <img
