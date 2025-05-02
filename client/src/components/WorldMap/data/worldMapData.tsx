@@ -58,7 +58,7 @@ export const mapFeatures: FeatureProps = {
   projection: availableProjections[10] as ProjectionProps,
   stroke: "#000",
   strokeWidth: 0.2,
-  notAvailableColor: "#EEE",
-  availableColor: "lightblue",
-  availableColorHover: "pink",
+  notAvailableColor: "#F5F5F5",
+  availableColor: "rgba(248, 245, 202, 1)",
+  availableColorHover: "rgba(76, 39, 25, 0.4)",
 };
