@@ -11,7 +11,9 @@ const Register = () => {
     <main className="register-page">
       <img src="./public/img/SavorLogo.png" alt="logo savorsafari" />
       <h1>Log in</h1>
-      <h2>It's a pleasure to see you again!</h2>
+      <h2>
+        It's a pleasure to see <br /> you again!
+      </h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">
