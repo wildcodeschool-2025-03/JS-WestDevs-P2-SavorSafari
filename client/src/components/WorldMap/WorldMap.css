@@ -1,10 +1,22 @@
 .world-map-section {
   display: grid;
   grid: repeat(2, auto) 1fr;
+  min-height: calc(100vh - 68.55px - 52.55px);
 
   h3 {
     grid-area: 1 / 1 / 2 / 2;
     text-align: center;
+  }
+
+  .static-map {
+    grid-area: 2 / 1 / 3 / 2;
+    object-fit: contain;
+    max-width: 100%;
+    opacity: 0.4;
+    filter: grayscale();
+  }
+
+  .mobile-form {
   }
 
   dialog {
@@ -68,25 +80,49 @@
   }
 
   .composable-map {
-    max-height: 80vh;
-    grid-area: 2 / 1 / 3 / 2;
-    justify-self: center;
+    display: none;
   }
 
   .controls {
-    grid-area: 2 / 1 / 3 / 2;
-    justify-self: center;
+    display: none;
+  }
 
-    button {
-      margin: 0.3rem;
-      background-color: var(--light-bg-bloc-color);
-      border: 1px solid var(--light-border-bloc-color);
-      border-radius: 4px;
+  @media screen and (width > 750px) {
+    .static-map {
+      display: none;
+    }
 
-      &:hover {
-        background-color: var(--light-bg-bloc-color-100);
+    .mobile-form {
+      display: none;
+    }
+
+    .composable-map {
+      display: initial;
+      max-height: 80vh;
+      grid-area: 2 / 1 / 3 / 2;
+      justify-self: center;
+    }
+
+    .controls {
+      display: initial;
+      grid-area: 2 / 1 / 3 / 2;
+      justify-self: center;
+
+      button {
+        margin: 0.3rem;
+        background-color: var(--light-bg-bloc-color);
+        border: 1px solid var(--light-border-bloc-color);
+        border-radius: 4px;
+
+        &:hover {
+          background-color: var(--light-bg-bloc-color-100);
+        }
       }
     }
+  }
+
+  @media screen and (min-width: 992px) {
+    min-height: calc(100vh - 68.55px - 57.35px);
   }
 }
 

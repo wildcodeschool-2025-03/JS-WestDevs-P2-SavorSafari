@@ -33,7 +33,7 @@ const WorldMap = () => {
     setPosition(position);
   };
 
-  // Nav on click + Popover
+  // Desktop : Nav on map click + Popover
 
   const navigate = useNavigate();
 
@@ -53,11 +53,47 @@ const WorldMap = () => {
     area && dialogRef.current && dialogRef.current.showModal();
   };
 
+  // Mobile : Nav on list keep ?
+  const [searchCountry, setSearchCountry] = useState('');
+
   return (
     <section className="world-map-section">
       <h3>
         Click, Cook, Travel : Discover the flavors of the world with a click!
       </h3>
+      {/* Mobile */}
+      <img src="../src/assets/img/world-map-img.webp" alt="Static world map" className="static-map" />
+
+      <div className="dropdown mobile-form">
+        <label htmlFor="country-input">Select your destination</label>
+        <input
+          type="text"
+          id="country-input"
+          placeholder="Search destination..."
+          list="country-list"
+          value={countryName}
+          onChange={event => setCountryName(event.target.value)}
+        />
+        <datalist id="country-list" className="options">
+          {availableCountries.map(country => (
+            <option key={country.key} value={country.name} />
+          ))}
+        </datalist>
+      </div>
+
+      <p className="selected mobile-form" id="selected-country">Selected country : {countryName}</p>
+      <button
+        type="button"
+        id="validate-btn"
+        className="mobile-form"
+        onClick={() => {
+          countryName && setArea(getAreaFromGeo(countryName));
+          area && navigate(`/recipe-list/${area}`)
+        }}
+      >
+        Travel !
+      </button>
+
       <dialog ref={dialogRef}>
         <p ref={popTextRef}>{countryName}</p>
         <button
@@ -77,6 +113,7 @@ const WorldMap = () => {
           Travel now !
         </button>
       </dialog>
+      {/* Desktop */}
       <ComposableMap
         projection={mapFeatures.projection}
         projectionConfig={{
