@@ -6,9 +6,9 @@ header {
 }
 
 header img {
-  object-fit: contain;
-  height: 100px;
-  padding: 10px;
+  width: 60px;
+  height: 60px;
+  margin: 5px;
 }
 
 .bm-burger-button {
@@ -59,7 +59,8 @@ header img {
   }
 
   header img {
-    height: 120px;
+    height: 70px;
+    width: 70px;
     padding: 5px;
   }
 
