@@ -8,8 +8,13 @@ interface Recipe {
 
 function IllustrationRecipe({ strMealThumb, idMeal, strMeal }: Recipe) {
   return (
-    <article>
-      <img src={strMealThumb} alt={`${strMeal} ${idMeal}`} />
+    <article className="picture-element">
+      <section className="title-picture-recipe">
+        <h2>{strMeal}</h2>
+      </section>
+      <section className="picture-recipe">
+        <img src={strMealThumb} alt={`${strMeal} ${idMeal}`} />
+      </section>
     </article>
   );
 }

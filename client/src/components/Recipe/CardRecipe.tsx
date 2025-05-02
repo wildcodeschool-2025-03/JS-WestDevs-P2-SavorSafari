@@ -1,5 +1,4 @@
 import "./CardRecipe.css";
-import React from "react";
 
 interface Recipe {
   idMeal?: string;
@@ -21,19 +20,27 @@ function CardRecipe({
     const measure = strMeasure[i];
     result.push({ ingredient, measure });
   }
+  const toTheLine = strInstructions
+    .replace(/[\r]/g, "")
+    .split("\n")
+    .filter((char) => char !== "");
   return (
-    <article>
+    <article className="card-element">
       <h2>{strMeal}</h2>
       <section className="ingredients">
         {result.map((el) => (
-          <React.Fragment key={el.ingredient}>
+          <section className="ingredient-card" key={el.ingredient}>
             <p>{el.ingredient}</p>
             <p>{el.measure}</p>
-          </React.Fragment>
+          </section>
         ))}
       </section>
       <section className="instructions">
-        <p>{strInstructions}</p>
+        <ul>
+          {toTheLine.map((el) => (
+            <li key={el}>{el}</li>
+          ))}
+        </ul>
       </section>
     </article>
   );

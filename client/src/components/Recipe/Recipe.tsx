@@ -37,7 +37,7 @@ function Recipe() {
         const measures = [];
         for (const [key, value] of Object.entries(meal)) {
           if (key.startsWith("strIngredient")) {
-            if (value !== " " && value !== null) {
+            if (value !== " " && value !== null && value !== "") {
               ingredients.push(value as string);
             }
           } else if (key.startsWith("strMeasure")) {
@@ -55,7 +55,12 @@ function Recipe() {
     return;
   }
   return (
-    <main>
+    <section className="recipe-element">
+      <article className="button">
+        <button type="button" onClick={() => window.history.back()}>
+          Précédent
+        </button>
+      </article>
       <article className="illustration-recipe">
         <IllustrationRecipe
           key={recipeData.idMeal}
@@ -73,7 +78,7 @@ function Recipe() {
           strInstructions={recipeData.strInstructions}
         />
       </article>
-    </main>
+    </section>
   );
 }
 

@@ -1,0 +1,55 @@
+.card-element {
+  background-color: rgb(246 245 202 / 54%);
+  margin: 0;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+article h2 {
+  text-align: center;
+  padding: 1rem 0 0.5rem 0;
+}
+
+.ingredients {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  gap: 5%;
+  font-size: 12px;
+}
+
+.ingredient-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.instructions {
+  width: auto;
+  height: 300px;
+  padding: 1rem 1rem 0 1rem;
+  overflow-y: scroll;
+  scrollbar-color: #f8f5ca white;
+  scrollbar-width: thin;
+  font-size: 12px;
+}
+
+.instructions ul {
+  list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+  article h2 {
+    display: none;
+  }
+  .ingredients {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+  }
+}
