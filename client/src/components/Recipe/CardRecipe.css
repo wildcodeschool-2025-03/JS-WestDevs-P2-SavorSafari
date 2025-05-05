@@ -16,11 +16,11 @@ article h2 {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(auto, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   padding: 1.5rem 1rem 1.5rem 1rem;
   gap: 5%;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .ingredient-card {
@@ -36,7 +36,7 @@ article h2 {
   overflow-y: scroll;
   scrollbar-color: #f8f5ca white;
   scrollbar-width: thin;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .instructions ul {
@@ -49,7 +49,11 @@ article h2 {
   }
   .ingredients {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto, 1fr);
+  }
+  .instructions {
+    height: 400px;
+    margin: 2rem 0 1rem 0;
   }
 }

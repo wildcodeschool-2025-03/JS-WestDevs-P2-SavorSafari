@@ -61,6 +61,9 @@ function Recipe() {
           Précédent
         </button>
       </article>
+      <section className="title-picture-recipe">
+        <h2>{recipeData.strMeal}</h2>
+      </section>
       <article className="illustration-recipe">
         <IllustrationRecipe
           key={recipeData.idMeal}

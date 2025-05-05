@@ -7,6 +7,10 @@
   color: #4c2719;
 }
 
+.title-picture-recipe {
+  display: none;
+}
+
 .button {
   grid-area: 1 / 6 / 2 / 7;
   padding: 4rem 0 0 0;
@@ -23,6 +27,8 @@
 
 .illustration-recipe {
   grid-area: 2 / 2 / 6 / 4;
+  margin: 0;
+  height: 100%;
 }
 
 .card-recipe {
@@ -33,18 +39,24 @@
   .recipe-element {
     display: grid;
     grid-template-columns: 0.2fr repeat(3, 1fr) 0.2fr;
-    grid-template-rows: 1fr 0.2fr 1fr 0.2fr repeat(2, 1fr) 0.2fr repeat(5, 1fr);
+    grid-template-rows: 1fr 0.2fr 0.75fr 0.2fr 1fr 1.5fr 0.2fr repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     margin: 0 0 1rem 0;
   }
 
+  .title-picture-recipe {
+    grid-area: 3 / 2 / 4 / 5;
+    display: block;
+    text-align: center;
+    text-wrap: wrap;
+  }
   .button {
     grid-area: 1 / 4 / 2 / 5;
   }
 
   .illustration-recipe {
-    grid-area: 3 / 2 / 7 / 5;
+    grid-area: 5 / 2 / 7 / 5;
   }
 
   .card-recipe {
