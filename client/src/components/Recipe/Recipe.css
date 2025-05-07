@@ -11,12 +11,12 @@
   display: none;
 }
 
-.button {
+.buttont-container {
   grid-area: 1 / 6 / 2 / 7;
   padding: 4rem 0 0 0;
   justify-self: right;
 }
-.button button {
+.buttont-container button {
   border-color: var(--light-border-bloc-color);
   background-color: white;
   color: var(--light-border-bloc-color);
@@ -42,14 +42,13 @@
     grid-template-rows: 1fr 0.2fr 0.75fr 0.2fr 1fr 1.5fr 0.2fr repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    margin: 0 0 1rem 0;
+    margin: 0 0 16px 0;
   }
 
   .title-picture-recipe {
     grid-area: 3 / 2 / 4 / 5;
     display: block;
     text-align: center;
-    text-wrap: wrap;
   }
   .button {
     grid-area: 1 / 4 / 2 / 5;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Recipe.css";
 import { useParams } from "react-router";
+import { useNavigate } from "react-router";
 
 import CardRecipe from "./CardRecipe";
 import IllustrationRecipe from "./IllustrationRecipe";
@@ -16,7 +17,10 @@ interface Recipe {
 }
 
 function Recipe() {
-  const [recipeData, setRecipeData] = useState<Recipe>();
+  const [recipeData, setRecipeData] = useState<Recipe | null>(null);
+  if (!recipeData) {
+    return <p>Loading recipe in progress...</p>;
+  }
   const params = useParams();
   useEffect(() => {
     fetch(
@@ -51,13 +55,19 @@ function Recipe() {
         setRecipeData(recipe);
       });
   }, [params]);
-  if (recipeData === undefined) {
+  if (recipeData === null) {
     return;
   }
+  const navigate = useNavigate();
   return (
     <section className="recipe-element">
-      <article className="button">
-        <button type="button" onClick={() => window.history.back()}>
+      <article className="button-container">
+        <button
+          type="button"
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
           Précédent
         </button>
       </article>
