@@ -3,6 +3,9 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  margin: auto;
+  width: fit-content;
+  margin-bottom: 32px;
 }
 
 .register-page img {
@@ -25,8 +28,8 @@ h2 {
   background-color: var(--light-bg-bloc-color);
   margin: 16px;
   font-size: 1rem;
-  width: 320px;
-  height: 60px;
+  width: 200px;
+  height: 48px;
   border-radius: 8px;
   border: none;
 }
@@ -35,10 +38,28 @@ h2 {
   cursor: pointer;
   margin: 16px;
   font-size: 1rem;
-  width: 264px;
+  width: 200px;
   height: 48px;
   color: white;
   background-color: #947d72;
   border-radius: 32px;
   border: none;
+}
+
+.section-register {
+  border-radius: 8px;
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.register-page [popover] {
+  margin: auto;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid var(--light-border-bloc-color);
+}
+
+.register-page ::backdrop {
+  backdrop-filter: blur(3px);
 }
