@@ -1,8 +1,10 @@
 import { slide as Menu } from "react-burger-menu";
 import "./Header.css";
 import { Link } from "react-router";
+import { useState } from "react";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <header>
@@ -16,17 +18,42 @@ const Header = () => {
         </div>
       </header>
 
-      <Menu right={true}>
-        <Link id="home" className="menu-item" to="/">
+      <Menu
+        right={true}
+        isOpen={isOpen}
+        onOpen={() => setIsOpen(!isOpen)}
+        onClose={() => setIsOpen(!isOpen)}
+      >
+        <Link
+          id="home"
+          className="menu-item"
+          to="/"
+          onClick={() => setIsOpen(false)}
+        >
           Home
         </Link>
-        <Link id="map" className="menu-item" to="/world-map">
+        <Link
+          id="map"
+          className="menu-item"
+          to="/world-map"
+          onClick={() => setIsOpen(false)}
+        >
           Map
         </Link>
-        <Link id="about" className="menu-item" to="/about">
+        <Link
+          id="about"
+          className="menu-item"
+          to="/about"
+          onClick={() => setIsOpen(false)}
+        >
           About
         </Link>
-        <Link id="register" className="menu-item" to="/register">
+        <Link
+          id="register"
+          className="menu-item"
+          to="/register"
+          onClick={() => setIsOpen(false)}
+        >
           Register
         </Link>
       </Menu>
