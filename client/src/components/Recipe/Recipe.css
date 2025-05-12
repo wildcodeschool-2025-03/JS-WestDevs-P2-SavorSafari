@@ -1,0 +1,64 @@
+.recipe-element {
+  display: grid;
+  grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr repeat(2, 1fr) 0.2fr;
+  grid-template-rows: repeat(5, 1fr) 0.2fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  color: #4c2719;
+}
+
+.title-picture-recipe {
+  display: none;
+}
+
+.buttont-container {
+  grid-area: 1 / 6 / 2 / 7;
+  padding: 4rem 0 0 0;
+  justify-self: right;
+}
+.buttont-container button {
+  border-color: var(--light-border-bloc-color);
+  background-color: white;
+  color: var(--light-border-bloc-color);
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.illustration-recipe {
+  grid-area: 2 / 2 / 6 / 4;
+  margin: 0;
+  height: 100%;
+}
+
+.card-recipe {
+  grid-area: 2 / 5 / 6 / 7;
+}
+
+@media screen and (max-width: 768px) {
+  .recipe-element {
+    display: grid;
+    grid-template-columns: 0.2fr repeat(3, 1fr) 0.2fr;
+    grid-template-rows: 1fr 0.2fr 0.75fr 0.2fr 1fr 1.5fr 0.2fr repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin: 0 0 16px 0;
+  }
+
+  .title-picture-recipe {
+    grid-area: 3 / 2 / 4 / 5;
+    display: block;
+    text-align: center;
+  }
+  .button {
+    grid-area: 1 / 4 / 2 / 5;
+  }
+
+  .illustration-recipe {
+    grid-area: 5 / 2 / 7 / 5;
+  }
+
+  .card-recipe {
+    grid-area: 8 / 2 / 13 / 5;
+  }
+}
