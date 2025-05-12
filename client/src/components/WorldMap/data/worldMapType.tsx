@@ -32,6 +32,7 @@ export interface CountryProps {
   key: number;
   name: string;
   strArea: string;
+  foodCategory: string;
 }
 
 export interface ZoomPositionProps {
