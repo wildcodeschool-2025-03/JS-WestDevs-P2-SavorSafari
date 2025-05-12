@@ -7,6 +7,7 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 import type { ZoomPositionProps } from "./data/worldMapType";
+import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from "@headlessui/react";
 
 import { availableCountries, mapFeatures } from "./data/worldMapData";
 import "./WorldMap.css";
@@ -33,7 +34,7 @@ const WorldMap = () => {
     setPosition(position);
   };
 
-  // Desktop : Nav on map click + Popover
+  // Desktop : Nav on map click + Modal
 
   const navigate = useNavigate();
 
@@ -53,17 +54,30 @@ const WorldMap = () => {
     area && dialogRef.current && dialogRef.current.showModal();
   };
 
-  // Mobile : Nav on list keep ?
+  // Mobile : Nav on combobox
+
+  const [query, setQuery] = useState('');
+
+  const filteredCountries =
+    query === '' ?
+      availableCountries :
+      availableCountries.filter(country => {
+        return country.name.toLowerCase().includes(query.toLowerCase())
+      })
 
   return (
     <section className="world-map-section">
       <h3>
         Click, Cook, Travel : Discover the flavors of the world with a click!
       </h3>
+
       {/* Mobile */}
       <img src="../src/assets/img/world-map-img.webp" alt="Static world map" className="static-map" />
 
       <div className="mobile-form">
+        {/* 
+        Old version - No lib input
+
         <div className="dropdown">
           <label htmlFor="country-input">Select your destination</label>
           <input
@@ -75,24 +89,12 @@ const WorldMap = () => {
             onChange={event => setCountryName(event.target.value)}
           />
 
-          {/* <select name="c" id="z">
-            {availableCountries.map(country => (
-              <option key={country.key} value={country.name}>
-                {country.name}
-              </option>
-            ))}
-          </select> */}
-
-          <ul>
-
-          </ul>
-
           <datalist id="country-list" className="options">
             {availableCountries.map(country => (
               <option key={country.key} value={country.name} />
             ))}
           </datalist>
-        </div>
+        </div> */}
 
         <p className="selected " id="selected-country">Selected country : {countryName}</p>
         <button
@@ -106,15 +108,37 @@ const WorldMap = () => {
         >
           Travel !
         </button>
+        <br />
+
+        <Combobox value={countryName} onChange={setCountryName} onClose={() => setQuery('')} >
+          <ComboboxInput
+            aria-label="Assignee"
+            displayValue={country => country?.name}
+            onChange={event => setQuery(event.target.value)}
+          />
+          <ComboboxOptions anchor="bottom" className="combobox-options">
+            {filteredCountries.map((country) => (
+              <ComboboxOption key={country.id} value={country} className="combobox-option">
+                {country.name}
+              </ComboboxOption>
+            ))}
+          </ComboboxOptions>
+        </Combobox>
+
+
+
+
       </div>
 
+      {/* Desktop - Confirm navigation */}
       <dialog ref={dialogRef}>
         <p ref={popTextRef}>{countryName}</p>
         <button
           type="button"
           onClick={() => {
-            if (dialogRef.current) dialogRef.current.close();
             setArea('');
+            setCountryName('');
+            if (dialogRef.current) dialogRef.current.close();
           }}
         >
           Choose another
@@ -129,7 +153,7 @@ const WorldMap = () => {
         </button>
       </dialog>
 
-      {/* Desktop */}
+      {/* Desktop - Map + Controls */}
       <ComposableMap
         projection={mapFeatures.projection}
         projectionConfig={{
