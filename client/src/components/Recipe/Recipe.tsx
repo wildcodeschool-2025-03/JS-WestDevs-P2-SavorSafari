@@ -18,9 +18,9 @@ interface Recipe {
 
 function Recipe() {
   const [recipeData, setRecipeData] = useState<Recipe | null>(null);
-  if (!recipeData) {
-    return <p>Loading recipe in progress...</p>;
-  }
+  // if (!recipeData) {
+  //   return <p>Loading recipe in progress...</p>;
+  // }
   const params = useParams();
   useEffect(() => {
     fetch(
@@ -55,10 +55,10 @@ function Recipe() {
         setRecipeData(recipe);
       });
   }, [params]);
+  const navigate = useNavigate();
   if (recipeData === null) {
     return;
   }
-  const navigate = useNavigate();
   return (
     <section className="recipe-element">
       <article className="button-container">
@@ -68,27 +68,27 @@ function Recipe() {
             navigate(-1);
           }}
         >
-          Précédent
+          Previous
         </button>
       </article>
       <section className="title-picture-recipe">
-        <h2>{recipeData.strMeal}</h2>
+        <h2>{recipeData?.strMeal}</h2>
       </section>
       <article className="illustration-recipe">
         <IllustrationRecipe
-          key={recipeData.idMeal}
-          idMeal={recipeData.idMeal}
-          strMealThumb={recipeData.strMealThumb}
-          strMeal={recipeData.strMeal}
+          key={recipeData?.idMeal}
+          idMeal={recipeData?.idMeal}
+          strMealThumb={recipeData?.strMealThumb}
+          strMeal={recipeData?.strMeal}
         />
       </article>
       <article className="card-recipe">
         <CardRecipe
-          key={recipeData.idMeal}
-          strMeal={recipeData.strMeal}
-          strIngredient={recipeData.strIngredient}
-          strMeasure={recipeData.strMeasure}
-          strInstructions={recipeData.strInstructions}
+          key={recipeData?.idMeal}
+          strMeal={recipeData?.strMeal}
+          strIngredient={recipeData?.strIngredient}
+          strMeasure={recipeData?.strMeasure}
+          strInstructions={recipeData?.strInstructions}
         />
       </article>
     </section>
