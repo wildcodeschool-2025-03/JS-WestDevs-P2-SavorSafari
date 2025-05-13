@@ -16,28 +16,24 @@ const Register = () => {
           It's a pleasure to see <br /> you again!
         </h2>
         <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="email">
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder="E-mail or Username"
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="password">
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-                placeholder="Password"
-              />
-            </label>
-          </div>
+          <label htmlFor="email">
+            <input
+              type="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              placeholder="E-mail or Username"
+            />
+          </label>
+          <br />
+          <label htmlFor="password">
+            <input
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              placeholder="Password"
+            />
+          </label>
+          <br />
           <button type="submit">Log in</button>
           <p>or</p>
           <button type="submit">Create an account</button>
@@ -52,8 +48,7 @@ const Register = () => {
           <div id="forgot-password" popover="auto">
             <h2>Forgot your password?</h2>
             <p>
-              Enter the email address you used when you registered or your
-              username.
+              Enter the email address you used when you registered.
               <br /> You will receive a link to reset your password by email.
             </p>
             <input type="email" placeholder="E-mail or Username" />
