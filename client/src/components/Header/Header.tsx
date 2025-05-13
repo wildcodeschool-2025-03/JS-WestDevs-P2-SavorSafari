@@ -1,7 +1,7 @@
 import { slide as Menu } from "react-burger-menu";
 import "./Header.css";
-import { Link } from "react-router";
 import { useState } from "react";
+import { Link } from "react-router";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
