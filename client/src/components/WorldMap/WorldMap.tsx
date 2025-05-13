@@ -6,8 +6,8 @@ import {
   Geography,
   ZoomableGroup,
 } from "react-simple-maps";
-import type { ZoomPositionProps } from "./data/worldMapType";
-import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from "@headlessui/react";
+import type { CountryProps, ZoomPositionProps } from "./data/worldMapType";
+import { Combobox, ComboboxButton, ComboboxInput, ComboboxOption, ComboboxOptions } from "@headlessui/react";
 
 import { availableCountries, mapFeatures } from "./data/worldMapData";
 import "./WorldMap.css";
@@ -75,32 +75,12 @@ const WorldMap = () => {
       <img src="../src/assets/img/world-map-img.webp" alt="Static world map" className="static-map" />
 
       <div className="mobile-form">
-        {/* 
-        Old version - No lib input
 
-        <div className="dropdown">
-          <label htmlFor="country-input">Select your destination</label>
-          <input
-            type="text"
-            id="country-input"
-            placeholder="Search destination..."
-            list="country-list"
-            value={countryName}
-            onChange={event => setCountryName(event.target.value)}
-          />
-
-          <datalist id="country-list" className="options">
-            {availableCountries.map(country => (
-              <option key={country.key} value={country.name} />
-            ))}
-          </datalist>
-        </div> */}
-
-        <p className="selected " id="selected-country">Selected country : {countryName}</p>
+        <p className="selected" id="selected-country">Selected country : {countryName}</p>
         <button
           type="button"
           id="validate-btn"
-          className=""
+          className="travel-button"
           onClick={() => {
             countryName && setArea(getAreaFromGeo(countryName));
             area && navigate(`/recipe-list/${area}`)
@@ -110,23 +90,42 @@ const WorldMap = () => {
         </button>
         <br />
 
-        <Combobox value={countryName} onChange={setCountryName} onClose={() => setQuery('')} >
-          <ComboboxInput
-            aria-label="Assignee"
-            displayValue={country => country?.name}
-            onChange={event => setQuery(event.target.value)}
-          />
+        <Combobox
+          value={countryName}
+          onChange={(country: string) => setCountryName(country)}
+          onClose={() => setQuery('')} >
+
+          <div className="combobox-container">
+            <ComboboxInput
+              className="combobox-input"
+              aria-label="Assignee"
+              displayValue={(country: CountryProps) => country?.name}
+              onChange={event => setQuery(event.target.value)}
+            />
+            <ComboboxButton className="combobox-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="chevron-down-icon" >
+                <title>Chevron-down icon</title>
+                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </ComboboxButton>
+          </div>
+
           <ComboboxOptions anchor="bottom" className="combobox-options">
             {filteredCountries.map((country) => (
-              <ComboboxOption key={country.id} value={country} className="combobox-option">
-                {country.name}
+              <ComboboxOption
+                key={country.id}
+                value={country.name}
+                className="combobox-option"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="check-icon">
+                  <title>Check icon</title>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                <div>{country.name}</div>
               </ComboboxOption>
             ))}
           </ComboboxOptions>
         </Combobox>
-
-
-
 
       </div>
 
@@ -239,7 +238,7 @@ const WorldMap = () => {
           </svg>
         </button>
       </div>
-    </section>
+    </section >
   );
 };
 

@@ -9,6 +9,7 @@
   }
 
   .static-map {
+    z-index: -10;
     grid-area: 2 / 1 / 3 / 2;
     object-fit: contain;
     max-width: 100%;
@@ -18,7 +19,43 @@
   .mobile-form {
     grid-area: 2 / 1 / 3 / 2;
     justify-self: center;
-    z-index: 10;
+
+    .combobox-container {
+      display: grid;
+      grid-template: auto 16px / auto;
+
+      .combobox-input {
+        grid-area: 1 / 1 / 2 / 3;
+        padding: 4px;
+
+        border: 1px solid var(--light-border-bloc-color);
+        border-radius: 4px;
+
+        &:focus {
+          outline: 2px solid var(--light-border-bloc-color);
+          outline-offset: -2px;
+          background-color: var(--light-bg-bloc-color);
+        }
+      }
+
+      .combobox-button {
+        all: unset;
+        grid-area: 1 / 2 / 2 / 3;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding-right: 4px;
+        height: 100%;
+
+        .chevron-down-icon {
+          height: 1rem;
+          cursor: pointer;
+          
+          
+        }
+        }
+      }
+    }
 
     .combobox-options {
       border: 1px solid black;
@@ -26,11 +63,21 @@
       /* &:empty {
         visibility: hidden;
       } */
-    }
 
-    .combobox-option {
-      &:focus {
-        background-color: #e299d7;
+      .combobox-option {
+        display: flex;
+
+        &:focus {
+          background-color: #e299d7;
+        }
+
+        &:hover {
+          background-color: #79c892;
+        }
+
+        .check-icon {
+          height: 1rem;
+        }
       }
     }
   }
