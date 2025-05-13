@@ -53,17 +53,13 @@
   font-family: var(--font-family-title);
 }
 
-/*@media screen and (max-width: 1078px) {
-  .about h1,
-  .about p,
-  .about h2 {
+@media screen and (min-width: 601px) and (max-width: 1097px) {
+  .about article {
     background-color: aquamarine;
-    font-size: 12px;
+    height: 330px;
+    width: 250%;
   }
-  .about h2 {
-    padding: 5px;
-  }
-}*/
+}
 
 @media screen and (max-width: 600px) {
   .about {
@@ -100,15 +96,11 @@
     height: 40px;
   }
 
-  .about h1 {
-    font-size: 8px;
-  }
   .about p {
-    font-size: 6px;
+    font-size: 7px;
     padding: 10px;
   }
-
   .about h2 {
-    font-size: 8px;
+    padding: 7px;
   }
 }
