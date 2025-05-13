@@ -53,6 +53,18 @@
   font-family: var(--font-family-title);
 }
 
+/*@media screen and (max-width: 1078px) {
+  .about h1,
+  .about p,
+  .about h2 {
+    background-color: aquamarine;
+    font-size: 12px;
+  }
+  .about h2 {
+    padding: 5px;
+  }
+}*/
+
 @media screen and (max-width: 600px) {
   .about {
     display: grid;
@@ -87,7 +99,16 @@
   .about article img {
     height: 40px;
   }
+
+  .about h1 {
+    font-size: 8px;
+  }
   .about p {
+    font-size: 6px;
     padding: 10px;
+  }
+
+  .about h2 {
+    font-size: 8px;
   }
 }
