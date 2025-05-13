@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <>
       <header>
-        <img src="src/assets/img/SavorLogo.png" alt="logo" />
+        <img src="/img/logo rogner.png" alt="logo" />
 
         <div className="nav menu">
           <Link to="/"> Home </Link>
