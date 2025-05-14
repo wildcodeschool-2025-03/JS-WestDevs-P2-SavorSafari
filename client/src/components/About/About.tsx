@@ -2,7 +2,7 @@ import "./About.css";
 
 const About = () => {
   return (
-    <main className="about">
+    <section className="about">
       <img className="logo" src="src/assets/img/SavorLogo.png" alt="logo" />
       <img className="avatar" src="/img/avatar-projet-2.png" alt="avatar" />
       <article>
@@ -22,7 +22,7 @@ const About = () => {
         </p>
         <h2>We wish you a wonderful journey!</h2>
       </article>
-    </main>
+    </section>
   );
 };
 
