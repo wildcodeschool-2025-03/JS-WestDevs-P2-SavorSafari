@@ -72,8 +72,8 @@ const WorldMap = () => {
     query === ""
       ? availableCountries
       : availableCountries.filter((country) => {
-          return country.name.toLowerCase().includes(query.toLowerCase());
-        });
+        return country.name.toLowerCase().includes(query.toLowerCase());
+      });
 
   return (
     <section className="world-map-section">
@@ -116,7 +116,7 @@ const WorldMap = () => {
               className="combobox-input"
               aria-label="Assignee"
               displayValue={(country: CountryProps) => country?.name}
-              onChange={(event) => setQuery(event.target.value)}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
             />
             <ComboboxButton className="combobox-button">
               <svg
