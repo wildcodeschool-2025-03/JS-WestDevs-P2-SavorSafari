@@ -1,0 +1,44 @@
+.create-user-space {
+  text-align: center;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100%;
+}
+
+.create-user-space .formulaire {
+  /*border: 2px, solid, black;*/
+  border-radius: 3%;
+  box-shadow: var(--light-border-bloc-color) 0px 5px 15px 0px;
+}
+
+.create-user-space .head {
+  border: 2px, solid, darkmagenta;
+  display: flex;
+  flex-direction: row;
+}
+
+.create-user-space .logo {
+  border: 2px, solid, red;
+  height: 100px;
+  width: 100px;
+}
+.create-user-space #text {
+  border: 2px, solid, blue;
+  width: 300px;
+}
+
+.create-user-space .form {
+  border: 2px, solid, orange;
+  width: 700px;
+}
+.create-user-space .log-in {
+  border: 2px, solid, yellow;
+  border: none;
+  height: 40px;
+  width: 160px;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--light-bg-bloc-color);
+}
