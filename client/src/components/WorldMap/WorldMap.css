@@ -4,7 +4,6 @@
   min-height: calc(100vh - 68.55px - 52.55px);
 
   h3 {
-    /* grid-area: 1 / 1 / 2 / 2; */
     text-align: center;
     height: fit-content;
   }
@@ -205,7 +204,7 @@
 .combobox-options {
   z-index: 20;
   width: var(--input-width);
-  height: 224px;
+  height: 240px;
   margin-top: 4px;
   border-radius: 8px;
   border: 1px solid var(--light-border-bloc-color);
@@ -229,7 +228,7 @@
     }
 
     &:hover {
-      background-color: lightgray;
+      background-color: var(--light-bg-bloc-color-100);
     }
 
     .check-icon {

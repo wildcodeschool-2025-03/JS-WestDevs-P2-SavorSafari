@@ -74,22 +74,30 @@ const WorldMap = () => {
       {/* Mobile */}
       <img src="../src/assets/img/world-map-img.webp" alt="Static world map" className="static-map" />
       <div className="mobile-form">
-        <p className="selected" id="selected-country">Selected country : <br /> {countryName}</p>
-        <button
-          type="button"
-          className="travel-button"
-          onClick={() => {
-            countryName && setArea(getAreaFromGeo(countryName));
-            area && navigate(`/recipe-list/${area}`)
-          }}
-        >
-          Travel !
-        </button>
+        {!countryName &&
+          <p>Choose your next stop !</p>
+        }
+        {countryName &&
+          <>
+            <p>Next stop : {countryName}</p>
+            <button
+              type="button"
+              className="travel-button"
+              onClick={() => {
+                countryName && setArea(getAreaFromGeo(countryName));
+                area && navigate(`/recipe-list/${area}`)
+              }}
+            >
+              Travel !
+            </button>
+          </>
+        }
 
         <Combobox
           value={countryName}
           onChange={(country: string) => setCountryName(country)}
           onClose={() => setQuery('')}
+          immediate
         >
 
           <div className="combobox-container">
