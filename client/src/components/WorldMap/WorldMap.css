@@ -215,6 +215,12 @@
     visibility: hidden;
   }
 
+  .category-option {
+    font-weight: 600;
+    padding-left: 8px;
+    background-color: #fff;
+  }
+
   .combobox-option {
     display: flex;
     align-items: center;

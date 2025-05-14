@@ -9,7 +9,7 @@ import {
 import type { CountryProps, ZoomPositionProps } from "./data/worldMapType";
 import { Combobox, ComboboxButton, ComboboxInput, ComboboxOption, ComboboxOptions } from "@headlessui/react";
 
-import { availableCountries, mapFeatures } from "./data/worldMapData";
+import { availableCountries, availableFoodCategories, mapFeatures } from "./data/worldMapData";
 import "./WorldMap.css";
 
 const WorldMap = () => {
@@ -116,19 +116,35 @@ const WorldMap = () => {
           </div>
 
           <ComboboxOptions anchor="bottom" className="combobox-options">
-            {filteredCountries.map((country) => (
-              <ComboboxOption
-                key={country.id}
-                value={country.name}
-                className="combobox-option"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="check-icon">
-                  <title>Check icon</title>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-                <div>{country.name}</div>
-              </ComboboxOption>
-            ))}
+            {availableFoodCategories.map(category => {
+              const filteredByCat = filteredCountries.filter(country => country.foodCategory === category);
+
+              return (
+                filteredByCat.length > 0 &&
+                <>
+                  <div
+                    key={category}
+                    className="category-option"
+                  >
+                    {category}
+                  </div>
+                  {filteredByCat.map((country) => (
+                    <ComboboxOption
+                      key={country.id}
+                      value={country.name}
+                      className="combobox-option"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="check-icon">
+                        <title>Check icon</title>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                      </svg>
+                      <div>{country.name}</div>
+                    </ComboboxOption>
+                  ))}
+                </>
+              )
+
+            })}
           </ComboboxOptions>
         </Combobox>
       </div>
