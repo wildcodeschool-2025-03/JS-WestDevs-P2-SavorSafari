@@ -1,0 +1,74 @@
+.userspace-element {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1.5fr 0.5fr 1fr 2fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 0.75fr 1fr 1.5fr repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 9px;
+  height: 85vh;
+  margin: 2rem;
+  box-shadow: 0 3px 6px #4c2719;
+  background-color: var(--light-bg-bloc-color);
+}
+
+.logo-savorsafari {
+  grid-area: 2 / 2 / 4 / 3;
+  height: 6rem;
+  width: 6rem;
+  img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+  }
+}
+
+.hello-user {
+  grid-area: 2 / 4 / 3 / 7;
+  text-align: center;
+  font-size: 36px;
+  color: #4c2719;
+  font-family: var(--font-family-title);
+}
+
+.list-of-recipe-consulted {
+  grid-area: 4 / 2 / 10 / 4;
+  color: #4c2719;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px #4c2719;
+}
+
+.the-users-recipes {
+  grid-area: 4 / 5 / 10 / 8;
+  color: #4c2719;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px #4c2719;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+@media screen and (max-width: 768px) {
+  .userspace-element {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 2fr 1fr 0.5fr;
+    grid-template-rows: 0.25fr 1fr 0.5fr repeat(3, 1fr) 1.75fr 0.25fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 16px;
+    height: auto;
+  }
+
+  .logo-savorsafari {
+    grid-area: 2 / 2 / 3 / 5;
+    width: auto;
+    height: auto;
+  }
+
+  .hello-user {
+    grid-area: 3 / 2 / 4 / 5;
+    margin: 0;
+  }
+
+  .list-of-recipe-consulted {
+    grid-area: 4 / 2 / 6 / 5;
+  }
+  .the-users-recipes {
+    grid-area: 6 / 2 / 8 / 5;
+  }
+}
