@@ -18,6 +18,7 @@ import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
 import RecipeList from "./components/RecipeList/RecipeList";
+import Register from "./components/Register/Register";
 import WorldMap from "./components/WorldMap/WorldMap";
 import CreateUserSpace from "./components/CreateUserSpace/CreateUserSpace";
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         element: <Recipe />,
       },
       { path: "/create-User-Space", element: <CreateUserSpace /> },
+      {
+        path: "/Register",
+        element: <Register />,
+      },
     ],
   },
   // Try adding a new route! For example, "/about" with an About component

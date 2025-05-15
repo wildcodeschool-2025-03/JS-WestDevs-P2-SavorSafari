@@ -64,7 +64,7 @@ const RecipeList = () => {
   };
 
   return (
-    <main>
+    <>
       <div className="country-select">
         <select value={country} onChange={handleCountryChange}>
           {countries.map((el) => (
@@ -85,7 +85,7 @@ const RecipeList = () => {
           />
         ))}
       </article>
-    </main>
+    </>
   );
 };
 export default RecipeList;
