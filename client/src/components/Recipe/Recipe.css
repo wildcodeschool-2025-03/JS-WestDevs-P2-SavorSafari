@@ -11,12 +11,12 @@
   display: none;
 }
 
-.buttont-container {
+.button-container {
   grid-area: 1 / 6 / 2 / 7;
   padding: 4rem 0 0 0;
   justify-self: right;
 }
-.buttont-container button {
+.button-container button {
   border-color: var(--light-border-bloc-color);
   background-color: white;
   color: var(--light-border-bloc-color);
