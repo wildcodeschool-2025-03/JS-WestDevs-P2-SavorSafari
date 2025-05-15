@@ -44,7 +44,7 @@ const WorldMap = () => {
     setPosition(position);
   };
 
-  // Desktop : Nav on map click + Modal
+  // Desktop
 
   const navigate = useNavigate();
 
@@ -64,7 +64,7 @@ const WorldMap = () => {
     area && dialogRef.current && dialogRef.current.showModal();
   };
 
-  // Mobile : Nav on combobox
+  // Mobile
 
   const [query, setQuery] = useState("");
 
@@ -72,8 +72,8 @@ const WorldMap = () => {
     query === ""
       ? availableCountries
       : availableCountries.filter((country) => {
-          return country.name.toLowerCase().includes(query.toLowerCase());
-        });
+        return country.name.toLowerCase().includes(query.toLowerCase());
+      });
 
   return (
     <section className="world-map-section">
