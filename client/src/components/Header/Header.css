@@ -6,17 +6,17 @@ header {
 }
 
 header img {
-  object-fit: contain;
-  height: 100px;
-  padding: 10px;
+  width: 55px;
+  height: 55px;
+  margin: 5px 5px 5px 15px;
 }
 
 .bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
+  position: absolute;
+  width: 34px;
+  height: 20px;
   right: 36px;
-  top: 36px;
+  top: 24px;
 }
 
 .bm-burger-bars {
@@ -53,14 +53,13 @@ header img {
   header {
     flex-direction: row;
   }
-
   .bm-burger-button {
     display: none;
   }
 
   header img {
-    height: 120px;
-    padding: 5px;
+    height: 70px;
+    width: 70px;
   }
 
   header a {
