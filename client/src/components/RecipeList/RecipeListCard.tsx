@@ -9,10 +9,12 @@ interface RecipeListCardProps {
 
 function RecipeListCard({ recipeName, picture, idMeal }: RecipeListCardProps) {
   return (
-    <Link to={`/recipe/${idMeal}`} className="recipe-list">
-      <img src={picture} alt={recipeName} />
-      <figcaption>{recipeName}</figcaption>
-    </Link>
+    <figure>
+      <Link to={`/recipe/${idMeal}`} className="recipe-list">
+        <img src={picture} alt={recipeName} />
+        <figcaption>{recipeName}</figcaption>
+      </Link>
+    </figure>
   );
 }
 
