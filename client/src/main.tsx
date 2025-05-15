@@ -15,12 +15,12 @@ import App from "./App";
 // import Contact from "./pages/Contact";
 
 import About from "./components/About/About";
+import CreateUserSpace from "./components/CreateUserSpace/CreateUserSpace";
 import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
 import RecipeList from "./components/RecipeList/RecipeList";
 import Register from "./components/Register/Register";
 import WorldMap from "./components/WorldMap/WorldMap";
-import CreateUserSpace from "./components/CreateUserSpace/CreateUserSpace";
 
 /* ************************************************************************* */
 
