@@ -139,5 +139,5 @@ export const mapFeatures: FeatureProps = {
   strokeWidth: 0.2,
   notAvailableColor: "#F5F5F5",
   availableColor: "rgba(248, 245, 202, 1)",
-  availableColorHover: "rgba(76, 39, 25, 0.4)",
+  availableColorHover: "rgba(76, 39, 25, 0.8)",
 };

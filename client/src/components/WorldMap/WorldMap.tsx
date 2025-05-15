@@ -228,7 +228,7 @@ const WorldMap = () => {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    className={geo.properties.name}
+                    className={`${geo.properties.name} country-on-map`}
                     stroke={mapFeatures.stroke}
                     strokeWidth={mapFeatures.strokeWidth}
                     style={{
