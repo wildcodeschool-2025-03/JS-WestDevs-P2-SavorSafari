@@ -8,9 +8,12 @@
 }
 
 .create-user-space .formulaire {
-  /*border: 2px, solid, black;*/
+  border: 2px, solid, black;
   border-radius: 3%;
   box-shadow: var(--light-border-bloc-color) 0px 5px 15px 0px;
+  background-color: var(--light-bg-bloc-color-100);
+  width: 900px;
+  height: 500px;
 }
 
 .create-user-space .head {
@@ -21,17 +24,30 @@
 
 .create-user-space .logo {
   border: 2px, solid, red;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
 }
 .create-user-space #text {
   border: 2px, solid, blue;
-  width: 300px;
+  width: 700px;
+  h1 {
+    margin: 30px;
+    color: var(--light-text-color);
+    font-size: 32px;
+    font-family: var(--font-family-body);
+  }
+  p {
+    color: var(--light-text-color);
+    font-family: var(--font-family-title);
+    font-size: 36px;
+  }
 }
 
 .create-user-space .form {
   border: 2px, solid, orange;
-  width: 700px;
+  width: 900px;
+  height: 290px;
+  margin: 10px;
 }
 .create-user-space .log-in {
   border: 2px, solid, yellow;
@@ -40,5 +56,48 @@
   width: 160px;
   border-radius: 50px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: var(--light-bg-bloc-color);
+  background-color: #886f66;
+  margin: 20px;
+
+  a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+  }
+}
+
+.create-user-space #input .log-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.create-user-space #input input {
+  background-color: pink;
+  width: 300px;
+  height: 40px;
+}
+
+.create-user-space #input #first-name,
+#surname,
+#username,
+#date {
+  color: blue;
+  margin: 5px;
+}
+
+.create-user-space #input #mail {
+  width: 614px;
+  color: red;
+  margin: 5px;
+}
+
+.create-user-space #input #password {
+  width: 614px;
+  margin: 5px;
+  color: mediumseagreen;
+}
+
+.create-user-space .form p {
+  text-align: left;
 }
