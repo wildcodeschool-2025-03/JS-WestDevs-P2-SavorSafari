@@ -15,26 +15,43 @@ const CreateUserSpace = () => {
         </article>
 
         <article className="form">
-          <label id="input">
+          <form id="input">
             <input
               id="first-name"
-              name=" First name *"
+              name="First name *"
+              type="text"
               defaultValue="First name *"
             />{" "}
-            <input id="surname" name="Surname *" defaultValue="Surname *" />
+            <input
+              id="surname"
+              name="Surname *"
+              type="text"
+              defaultValue="Surname *"
+            />
             <br />
             <input id="username" name="Username *" defaultValue="User name" />{" "}
             <input
               id="date"
               name="Date of birth *"
+              type="text"
               defaultValue="Date of birth *"
             />
             <br />
-            <input id="mail" name="E mail *" defaultValue="E mail *" />
+            <input
+              id="mail"
+              name="E mail *"
+              type="text"
+              defaultValue="E mail *"
+            />
             <br />
-            <input id="password" name="Password *" defaultValue="Passord *" />
+            <input
+              id="password"
+              name="Password *"
+              type="text"
+              defaultValue="Passord *"
+            />
             <br />
-          </label>
+          </form>
           <button className="log-in" type="button">
             <Link to="/user space"> Log in</Link>
           </button>

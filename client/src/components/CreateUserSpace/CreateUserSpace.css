@@ -4,64 +4,60 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-basis: 100%;
 }
 
 .create-user-space .formulaire {
-  border: 2px, solid, black;
   border-radius: 3%;
   box-shadow: var(--light-border-bloc-color) 0px 5px 15px 0px;
-  background-color: var(--light-bg-bloc-color-100);
+  background-color: hsl(56, 58%, 95%);
   width: 900px;
   height: 500px;
 }
 
 .create-user-space .head {
-  border: 2px, solid, darkmagenta;
   display: flex;
   flex-direction: row;
 }
 
 .create-user-space .logo {
-  border: 2px, solid, red;
-  height: 150px;
-  width: 150px;
+  height: 130px;
+  width: 130px;
+  margin: 20px, 10px, 10px, 10px;
 }
 .create-user-space #text {
-  border: 2px, solid, blue;
   width: 700px;
   h1 {
-    margin: 30px;
+    margin: 20px;
     color: var(--light-text-color);
-    font-size: 32px;
+    font-size: 28px;
     font-family: var(--font-family-body);
+    font-weight: 400;
   }
   p {
     color: var(--light-text-color);
     font-family: var(--font-family-title);
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 
 .create-user-space .form {
-  border: 2px, solid, orange;
-  width: 900px;
+  width: 850px;
   height: 290px;
   margin: 10px;
+  padding: 10px;
 }
 .create-user-space .log-in {
-  border: 2px, solid, yellow;
   border: none;
   height: 40px;
   width: 160px;
   border-radius: 50px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: #886f66;
+  background-color: #9e8b84;
   margin: 20px;
 
   a {
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: none;
   }
 }
@@ -73,7 +69,7 @@
   flex-direction: column;
 }
 .create-user-space #input input {
-  background-color: pink;
+  background-color: hsl(55, 69%, 90%);
   width: 300px;
   height: 40px;
 }
@@ -82,22 +78,150 @@
 #surname,
 #username,
 #date {
-  color: blue;
+  color: var(--light-text-color);
   margin: 5px;
+  border: none;
 }
 
 .create-user-space #input #mail {
   width: 614px;
-  color: red;
+  color: var(--light-text-color);
   margin: 5px;
+  border: none;
 }
 
 .create-user-space #input #password {
   width: 614px;
   margin: 5px;
-  color: mediumseagreen;
+  color: var(--light-text-color);
+  border: none;
 }
 
 .create-user-space .form p {
   text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+  /*MOBILE*/
+  .create-user-space {
+    display: grid;
+    grid-template-rows: 0.8 fr repeat(4, 1fr);
+    height: auto;
+  }
+  .create-user-space .formulaire {
+    margin: 15px;
+    align-items: center;
+    justify-content: center;
+    grid-area: 2 / 2 / 5 / 3;
+    width: 280px;
+    height: 670px;
+  }
+  .create-user-space .head {
+    display: flex;
+  }
+  .create-user-space .logo {
+    grid-area: 1 / 2 / 1 / 2;
+    height: 80px;
+    width: 80px;
+    margin: 5px;
+  }
+
+  .create-user-space #text {
+    grid-area: 3 / 2 / 6 / 3;
+    margin: 5px;
+    width: 250px;
+
+    h1 {
+      font-size: 16px;
+      margin: 10px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .create-user-space .head {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .create-user-space .form {
+    justify-content: center;
+    grid-area: 1 / 2 / 6 / 1;
+    width: 250px;
+    height: 390px;
+  }
+
+  .create-user-space #input #first-name {
+    width: 150px;
+  }
+  .create-user-space #input #date {
+    width: 150px;
+  }
+  .create-user-space #input #username {
+    width: 150px;
+  }
+  .create-user-space #input #surname {
+    width: 150px;
+  }
+  .create-user-space #input #mail {
+    width: 150px;
+  }
+  .create-user-space #input #password {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 919px) {
+  /*TABLETTE*/
+  .create-user-space {
+    height: auto;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 0.2fr repeat(3, 1fr) 0.2fr;
+  }
+  .create-user-space .formulaire {
+    grid-area: 2 / 2 / 5 / 3;
+    justify-content: center;
+    width: 600px;
+    height: 600px;
+  }
+
+  .create-user-space #text {
+    grid-area: 3 / 2 / 6 / 3;
+    margin: 5px;
+    width: 400px;
+    h1 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+  .create-user-space .form {
+    justify-content: center;
+    grid-area: 1 / 2 / 6 / 1;
+    width: 550px;
+    height: 390px;
+  }
+
+  .create-user-space #input #first-name {
+    width: 400px;
+  }
+  .create-user-space #input #date {
+    width: 400px;
+  }
+  .create-user-space #input #username {
+    width: 400px;
+  }
+  .create-user-space #input #surname {
+    width: 400px;
+  }
+  .create-user-space #input #mail {
+    width: 400px;
+  }
+  .create-user-space #input #password {
+    width: 400px;
+  }
 }
