@@ -72,8 +72,8 @@ const WorldMap = () => {
     query === ""
       ? availableCountries
       : availableCountries.filter((country) => {
-        return country.name.toLowerCase().includes(query.toLowerCase());
-      });
+          return country.name.toLowerCase().includes(query.toLowerCase());
+        });
 
   return (
     <section className="world-map-section">
