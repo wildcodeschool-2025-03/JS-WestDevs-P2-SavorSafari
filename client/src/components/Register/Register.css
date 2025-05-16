@@ -1,11 +1,9 @@
 .register-page {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   text-align: center;
-  margin: auto;
-  width: fit-content;
-  margin-bottom: 32px;
 }
 
 .register-page img {
@@ -51,10 +49,12 @@ h2 {
   box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  margin-bottom: 16px;
 }
 
 .register-page [popover] {
   margin: auto;
+  width: 280px;
   padding: 8px;
   border-radius: 8px;
   border: 2px solid var(--light-border-bloc-color);
@@ -62,4 +62,14 @@ h2 {
 
 .register-page ::backdrop {
   backdrop-filter: blur(3px);
+}
+
+@media screen and (min-width: 600px) {
+  .register-page {
+    min-height: calc(100vh - 98px - 58.1px);
+
+    [popover] {
+      width: 320px;
+    }
+  }
 }
