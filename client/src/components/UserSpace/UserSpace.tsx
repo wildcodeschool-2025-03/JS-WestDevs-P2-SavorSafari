@@ -6,17 +6,17 @@ function UserSpace() {
   const userName = "Head Chef";
 
   return (
-    <section className="userspace-element">
+    <section className="userspace">
       <div>
         <img src="/public/img/SavorLogo.png" alt="Logo SavorSafari" />
       </div>
-      <section className="hello-user">
+      <section>
         <p>Hello {userName}</p>
       </section>
       <section>
         <ConsultedRecipe />
       </section>
-      <section className="the-users-recipes">
+      <section>
         <FormUsers />
       </section>
     </section>
