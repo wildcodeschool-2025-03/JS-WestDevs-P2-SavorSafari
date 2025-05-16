@@ -8,7 +8,7 @@ const Register = () => {
   const handleSubmit = (event: React.FormEvent) => event.preventDefault();
 
   return (
-    <main className="register-page">
+    <section className="register-page">
       <img src="./public/img/SavorLogo.png" alt="logo savorsafari" />
       <div className="section-register">
         <h1>Log in</h1>
@@ -43,10 +43,10 @@ const Register = () => {
             type="button"
             popoverTargetAction="show"
           >
-            Forgotten password
+            Forgot password
           </button>
           <div id="forgot-password" popover="auto">
-            <h2>Forgot your password?</h2>
+            <h2>Forgot your password ?</h2>
             <p>
               Enter the email address you used when you registered.
               <br /> You will receive a link to reset your password by email.
@@ -56,7 +56,7 @@ const Register = () => {
           </div>
         </form>
       </div>
-    </main>
+    </section>
   );
 };
 
