@@ -36,15 +36,11 @@ const Register = () => {
           </label>
           <br />
           <Link to="/userspace">
-            <button type="submit">
-              Log in
-            </button>
+            <button type="submit">Log in</button>
           </Link>
           <p>or</p>
           <Link to="/create-user-space">
-            <button type="submit">
-              Create an account
-            </button>
+            <button type="submit">Create an account</button>
           </Link>
           <br />
           <button
