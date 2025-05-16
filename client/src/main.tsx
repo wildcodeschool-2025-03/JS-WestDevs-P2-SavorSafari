@@ -15,6 +15,7 @@ import App from "./App";
 // import Contact from "./pages/Contact";
 
 import About from "./components/About/About";
+import CreateUserSpace from "./components/CreateUserSpace/CreateUserSpace";
 import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
 import RecipeList from "./components/RecipeList/RecipeList";
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/recipe/:idMeal",
         element: <Recipe />,
+      },
+      {
+        path: "/create-user-space",
+        element: <CreateUserSpace />,
       },
       {
         path: "/Register",
