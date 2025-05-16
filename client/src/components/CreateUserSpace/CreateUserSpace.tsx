@@ -23,10 +23,10 @@ const CreateUserSpace = () => {
               defaultValue="First name *"
             />{" "}
             <input
-              id="surname"
-              name="Surname *"
+              id="nickname"
+              name="nickname *"
               type="text"
-              defaultValue="Surname *"
+              defaultValue="nickname *"
             />
             <br />
             <input id="username" name="Username *" defaultValue="User name" />{" "}
@@ -48,7 +48,7 @@ const CreateUserSpace = () => {
               id="password"
               name="Password *"
               type="text"
-              defaultValue="Passord *"
+              defaultValue="Password *"
             />
             <br />
           </form>

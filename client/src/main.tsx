@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         path: "/recipe/:idMeal",
         element: <Recipe />,
       },
-      { path: "/create-User-Space", element: <CreateUserSpace /> },
+      { path: "/create-user-space", element: <CreateUserSpace /> },
       {
         path: "/Register",
         element: <Register />,
