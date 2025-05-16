@@ -1,26 +1,17 @@
 .class-footer {
   color: var(--light-text-color);
   border-top: 1px solid black;
-  font-size: 0.5rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: 32px;
-}
 
-.icon-footer img {
-  width: 32px;
-  margin: 8px;
-}
-
-@media screen and (min-width: 992px) {
-  .class-footer {
-    font-size: 1rem;
-    justify-content: space-between;
+  p {
+    margin-left: 8px;
   }
 
-  .class-footer p,
-  a {
+  img {
+    width: 32px;
     margin: 8px;
   }
 }

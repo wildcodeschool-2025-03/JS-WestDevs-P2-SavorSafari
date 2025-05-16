@@ -29,10 +29,18 @@ export interface WorldMapProps {
 }
 
 export interface CountryProps {
-  key: number;
+  id: number;
   name: string;
   strArea: string;
+  foodCategory: string;
 }
+
+export type FoodCategoryProps =
+  | "Asian"
+  | "Eastern European"
+  | "Latin American & Caribbean"
+  | "Middle Eastern & African"
+  | "Western";
 
 export interface ZoomPositionProps {
   position: {

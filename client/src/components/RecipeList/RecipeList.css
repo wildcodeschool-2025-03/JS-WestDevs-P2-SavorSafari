@@ -1,25 +1,29 @@
+.country-select {
+  text-align: end;
+  margin: 16px 32px;
+
+  select {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--light-text-color);
+    width: 128px;
+    padding: 8px 4px;
+    border: 1px solid var(--light-border-bloc-color);
+    border-radius: 4px;
+    background-color: var(--light-bg-bloc-color);
+  }
+}
+
 .title-recipe {
   text-align: center;
   margin: 16px 0;
   color: var(--light-text-color);
 }
 
-.country-select {
-  text-align: end;
-  margin-right: 32px;
-}
-
-.country-select,
-select,
-select::picker(select) {
-  appearance: base-select;
-  color: var(--light-text-color);
-  padding: 4px 8px;
-}
-
-@media screen and (min-width: 600px) {
-  .card-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
+.card-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 240px;
 }

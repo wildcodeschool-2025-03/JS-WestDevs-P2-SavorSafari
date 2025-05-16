@@ -1,3 +1,10 @@
+import {
+  Combobox,
+  ComboboxButton,
+  ComboboxInput,
+  ComboboxOption,
+  ComboboxOptions,
+} from "@headlessui/react";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import {
@@ -6,9 +13,13 @@ import {
   Geography,
   ZoomableGroup,
 } from "react-simple-maps";
-import type { ZoomPositionProps } from "./data/worldMapType";
+import type { CountryProps, ZoomPositionProps } from "./data/worldMapType";
 
-import { availableCountries, mapFeatures } from "./data/worldMapData";
+import {
+  availableCountries,
+  availableFoodCategories,
+  mapFeatures,
+} from "./data/worldMapData";
 import "./WorldMap.css";
 
 const WorldMap = () => {
@@ -33,7 +44,7 @@ const WorldMap = () => {
     setPosition(position);
   };
 
-  // Nav on click + Popover
+  // Desktop
 
   const navigate = useNavigate();
 
@@ -53,16 +64,131 @@ const WorldMap = () => {
     area && dialogRef.current && dialogRef.current.showModal();
   };
 
+  // Mobile
+
+  const [query, setQuery] = useState("");
+
+  const filteredCountries =
+    query === ""
+      ? availableCountries
+      : availableCountries.filter((country) => {
+          return country.name.toLowerCase().includes(query.toLowerCase());
+        });
+
   return (
     <section className="world-map-section">
       <h3>
         Click, Cook, Travel : Discover the flavors of the world with a click!
       </h3>
+
+      {/* Mobile */}
+      <img
+        src="../src/assets/img/world-map-img.webp"
+        alt="Static world map"
+        className="static-map"
+      />
+      <div className="mobile-form">
+        {!countryName && <p>Choose your next stop !</p>}
+        {countryName && (
+          <>
+            <p>Next stop : {countryName}</p>
+            <button
+              type="button"
+              className="travel-button"
+              onClick={() => {
+                countryName && setArea(getAreaFromGeo(countryName));
+                area && navigate(`/recipe-list/${area}`);
+              }}
+            >
+              Travel !
+            </button>
+          </>
+        )}
+
+        <Combobox
+          value={countryName}
+          onChange={(country: string) => setCountryName(country)}
+          onClose={() => setQuery("")}
+          immediate
+        >
+          <div className="combobox-container">
+            <ComboboxInput
+              className="combobox-input"
+              aria-label="Assignee"
+              displayValue={(country: CountryProps) => country?.name}
+              onChange={(event) => setQuery(event.target.value)}
+            />
+            <ComboboxButton className="combobox-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="chevron-down-icon"
+              >
+                <title>Chevron-down icon</title>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </ComboboxButton>
+          </div>
+
+          <ComboboxOptions anchor="bottom" className="combobox-options">
+            {availableFoodCategories.map((category) => {
+              const filteredByCat = filteredCountries.filter(
+                (country) => country.foodCategory === category,
+              );
+
+              return (
+                filteredByCat.length > 0 && (
+                  <>
+                    <div key={category} className="category-option">
+                      {category}
+                    </div>
+                    {filteredByCat.map((country) => (
+                      <ComboboxOption
+                        key={country.id}
+                        value={country.name}
+                        className="combobox-option"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="check-icon"
+                        >
+                          <title>Check icon</title>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 12.75 6 6 9-13.5"
+                          />
+                        </svg>
+                        <div>{country.name}</div>
+                      </ComboboxOption>
+                    ))}
+                  </>
+                )
+              );
+            })}
+          </ComboboxOptions>
+        </Combobox>
+      </div>
+
+      {/* Desktop - Confirm navigation */}
       <dialog ref={dialogRef}>
         <p ref={popTextRef}>{countryName}</p>
         <button
           type="button"
           onClick={() => {
+            setArea("");
+            setCountryName("");
             if (dialogRef.current) dialogRef.current.close();
           }}
         >
@@ -77,6 +203,8 @@ const WorldMap = () => {
           Travel now !
         </button>
       </dialog>
+
+      {/* Desktop - Map + Controls */}
       <ComposableMap
         projection={mapFeatures.projection}
         projectionConfig={{
@@ -100,7 +228,7 @@ const WorldMap = () => {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    className={geo.properties.name}
+                    className={`${geo.properties.name} country-on-map`}
                     stroke={mapFeatures.stroke}
                     strokeWidth={mapFeatures.strokeWidth}
                     style={{
