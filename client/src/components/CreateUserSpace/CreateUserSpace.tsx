@@ -21,12 +21,14 @@ const CreateUserSpace = () => {
               name="First name *"
               type="text"
               defaultValue="First name *"
+              required
             />{" "}
             <input
-              id="nickname"
-              name="nickname *"
+              id="surname"
+              name="surname *"
               type="text"
-              defaultValue="nickname *"
+              defaultValue="Surname *"
+              required
             />
             <br />
             <input id="username" name="Username *" defaultValue="User name" />{" "}
@@ -35,6 +37,7 @@ const CreateUserSpace = () => {
               name="Date of birth *"
               type="text"
               defaultValue="Date of birth *"
+              required
             />
             <br />
             <input
@@ -42,6 +45,7 @@ const CreateUserSpace = () => {
               name="E mail *"
               type="text"
               defaultValue="E mail *"
+              required
             />
             <br />
             <input
@@ -49,11 +53,12 @@ const CreateUserSpace = () => {
               name="Password *"
               type="text"
               defaultValue="Password *"
+              required
             />
             <br />
           </form>
           <button className="log-in" type="button">
-            <Link to="/user space"> Log in</Link>
+            <Link to="/userspace"> Log in</Link>
           </button>
           <p> * required.</p>
         </article>
