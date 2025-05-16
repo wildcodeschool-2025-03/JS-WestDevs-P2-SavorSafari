@@ -7,13 +7,13 @@ function UserSpace() {
 
   return (
     <section className="userspace-element">
-      <div className="logo-savorsafari">
+      <div>
         <img src="/public/img/SavorLogo.png" alt="Logo SavorSafari" />
       </div>
       <section className="hello-user">
         <p>Hello {userName}</p>
       </section>
-      <section className="list-of-recipe-consulted">
+      <section>
         <ConsultedRecipe />
       </section>
       <section className="the-users-recipes">

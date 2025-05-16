@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import "./ConsultedRecipe.css";
 
-interface Recipe {
+interface ConsultedRecipe {
   strMeal: string;
   idMeal: string;
 }
 
 function ConsultedRecipe() {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [recipes, setRecipes] = useState<ConsultedRecipe[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchedRecipes: Recipe[] = [];
+    const fetchedRecipes: ConsultedRecipe[] = [];
     const getRecipes = (count: number) => {
       if (count === 0) {
         setRecipes(fetchedRecipes);

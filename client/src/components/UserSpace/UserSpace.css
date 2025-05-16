@@ -10,7 +10,7 @@
   background-color: var(--light-bg-bloc-color);
 }
 
-.logo-savorsafari {
+.userspace-element section:first-of-type {
   grid-area: 2 / 2 / 4 / 3;
   height: 6rem;
   width: 6rem;
@@ -29,7 +29,7 @@
   font-family: var(--font-family-title);
 }
 
-.list-of-recipe-consulted {
+.userspace-element section:nth-child(2) {
   grid-area: 4 / 2 / 10 / 4;
   color: #4c2719;
   border-radius: 5px;
