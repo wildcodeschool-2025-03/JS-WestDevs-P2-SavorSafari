@@ -1,0 +1,38 @@
+.consulted-recipes {
+  height: 100%;
+  width: auto;
+  background-color: white;
+  text-align: center;
+}
+
+.title-consulted-recipe {
+  font-family: var(--font-family-title);
+  font-size: 1.8rem;
+}
+
+#button-consulted-recipe {
+  margin: 0.5rem;
+  width: 80%;
+  border: none;
+  background-color: #fef8e9;
+  color: var(--light-border-bloc-color);
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .consulted-recipes {
+    justify-content: center;
+  }
+
+  .title-consulted-recipe {
+    display: block;
+  }
+
+  #button-consulted-recipe {
+    width: 80%;
+    height: auto;
+    margin: 1rem;
+    padding: 1rem;
+  }
+}

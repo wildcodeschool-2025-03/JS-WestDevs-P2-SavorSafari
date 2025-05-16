@@ -20,6 +20,7 @@ import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
 import RecipeList from "./components/RecipeList/RecipeList";
 import Register from "./components/Register/Register";
+import UserSpace from "./components/UserSpace/UserSpace";
 import WorldMap from "./components/WorldMap/WorldMap";
 
 /* ************************************************************************* */
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/Register",
         element: <Register />,
+      },
+      {
+        path: "/userspace",
+        element: <UserSpace />,
       },
     ],
   },
