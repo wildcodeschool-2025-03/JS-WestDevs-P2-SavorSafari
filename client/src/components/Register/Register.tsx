@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Register.css";
+import { Link } from "react-router";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -34,9 +35,17 @@ const Register = () => {
             />
           </label>
           <br />
-          <button type="submit">Log in</button>
+          <Link to="/userspace">
+            <button type="submit">
+              Log in
+            </button>
+          </Link>
           <p>or</p>
-          <button type="submit">Create an account</button>
+          <Link to="/create-user-space">
+            <button type="submit">
+              Create an account
+            </button>
+          </Link>
           <br />
           <button
             popoverTarget="forgot-password"
